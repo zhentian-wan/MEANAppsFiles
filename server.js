@@ -41,7 +41,10 @@ app.use('/css',stylus.middleware(
 //Any request comes in, will find the same filename file in public dir
 app.use(express.static(__dirname + '/public'));
 
-
+//Set route for partials
+app.get('/partials/:partialPath', function(req,res) {
+    res.render('partials/' + req.params.partialPath); //When request comes for main partials, it will look for server/views/partials/mian
+});
 
 // All routes handled by this route, give client side to handle
 app.get('/', function(req,res) {
