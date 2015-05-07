@@ -3,12 +3,14 @@
  */
 var express = require('express');
 var stylus = require('stylus');
+var mongoose = require('mongoose');
 var nib = require('nib');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
 var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var app = new express();
+
 
 //compile stylus
 function compile(str, path) {
@@ -24,7 +26,7 @@ app.set('views', __dirname + '/server/views');
 // Set jade
 app.set('view engine', 'jade');
 
-//loggin
+//logging
 app.use(logger('dev'));
 
 //bodyparser
@@ -33,10 +35,18 @@ app.use(bodyParser.json());
 
 //Use stylus
 app.use('/css',stylus.middleware(
-    { src: __dirname + '/public'
+    {   src: __dirname + '/public'
         , compile: compile
     }
 ));
+
+//Use Mongoose
+mongoose.connect('mongodb://localhost/multivision');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', function callback(){
+   console.log('db opened'); 
+});
 
 //Any request comes in, will find the same filename file in public dir
 app.use(express.static(__dirname + '/public'));
