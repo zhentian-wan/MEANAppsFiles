@@ -4,7 +4,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var stylus = require('stylus');
-//var nib = require('nib');
+var nib = require('nib');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 
@@ -17,8 +17,8 @@ function compile(str, path) {
     return stylus(str)
         .set('filename', path)
         .set('compress', true)
-       // .use(nib())
-        //.import('nib');
+        .use(nib())
+        .import('nib');
 }
 
 // Set view page path
