@@ -2,8 +2,8 @@
  * Created by Answer1215 on 5/5/2015.
  */
 var express = require('express');
-var stylus = require('stylus');
 var mongoose = require('mongoose');
+var stylus = require('stylus');
 var nib = require('nib');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
@@ -41,11 +41,25 @@ app.use('/css',stylus.middleware(
 ));
 
 //Use Mongoose
-mongoose.connect('mongodb://localhost/multivision');
+if(env === "development"){
+    mongoose.connect('mongodb://localhost/multivision');
+}else{
+    mongoose.connect('mongodb://zhentian:admin@ds031932.mongolab.com:31932/multivision');
+}
+
+
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', function callback(){
-   console.log('db opened'); 
+   console.log('db opened');
+});
+
+var mongooseSchema = mongoose.Schema({message: String});
+var Messages = mongoose.model('Message',mongooseSchema);
+var mongoMessage;
+Messages.findOne().exec(function(err,messageDoc) {
+    mongoMessage = messageDoc.message;
+    console.log(mongoMessage);
 });
 
 //Any request comes in, will find the same filename file in public dir
@@ -58,10 +72,12 @@ app.get('/partials/:partialPath', function(req,res) {
 
 // All routes handled by this route, give client side to handle
 app.get('/', function(req,res) {
-    res.render('index');
+    res.render('index', {
+        mongoMessage: mongoMessage
+    });
 });
 
-var port = 3030;
+var port = process.env.PORT || 3030;
 app.listen(port);
 
 console.log("Server is listening at " + port);
