@@ -2,5 +2,19 @@ extends ../includes/layout
 
 block main-content
    section.content
+      .navbar.navbar-inverse.navbar-fixed-top
+         .container
+            .navbar-header
+               a.navbar-brand(href="/") Multivision
+                  h6 - Testing app
+             .navbar-collapse.collapse
+                ul.nav.navbar-nav
+                   li
+                     a(href="/") Home
+                   li
+                     a(href="/") Users
+                 div(ng-include="'/partials/account/navbar-login'")
       div(ng-view)
-   h2= mongoMessage
+
+   footer.container.text-center
+      p &copy; 2015 Answer
