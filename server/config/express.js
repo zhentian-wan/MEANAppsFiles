@@ -5,7 +5,10 @@ var express = require('express'),
     stylus = require('stylus'),
     nib = require('nib'),
     logger = require('morgan'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    cookieParser = require('cookie-parser'),
+    session = require('express-session'),
+    passport = require('passport');
 
 module.exports = function(app, config) {
     //compile stylus
@@ -26,10 +29,15 @@ module.exports = function(app, config) {
     //logging
     app.use(logger('dev'));
 
+    //cookieParser
+    app.use(cookieParser());
+
     //bodyparser
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
-
+    app.use(session({secret: 'multi vision unicorns', resave:false, saveUninitialized:false}));
+    app.use(passport.initialize());
+    app.use(passport.session());
     //Use stylus
     app.use('/css', stylus.middleware(
         {
