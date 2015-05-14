@@ -2,12 +2,13 @@ doctype
 html
     head
         title Multivision
+        base(href="/")
         link(href="/favicon.ico", rel="shortcut icon", type="image/x-icon")
         link(href="/css/bootstrap.css", rel="stylesheet")
         link(href="/vendor/toastr/toastr.min.css" rel='stylesheet')
         link(href="/css/site.css", rel="stylesheet")
 
-    body(ng-app="app")
+    body(ng-app="app" ng-controller="AppController")
         include currentUser
         block main-content
         //include all the javascript files

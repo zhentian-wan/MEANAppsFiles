@@ -1,6 +1,6 @@
 
 
-function loginService($http, $q, IdentityFactory){
+function loginService($http, $q, IdentityFactory, UserResource, NOT_AUTHORIZED){
 
     var service = {};
 
@@ -17,7 +17,11 @@ function loginService($http, $q, IdentityFactory){
             }).then(extract)
                 .then(function(response){
                     if(response.success){
-                        IdentityFactory.currentUser = response.user;
+                        //Use user resource
+                        var user = new UserResource();
+                        //extend user object by adding user info
+                        angular.extend(user, response.user);
+                        IdentityFactory.currentUser = user;
                         resolve(true);
                     }else{
                         resolve(false);
@@ -34,6 +38,16 @@ function loginService($http, $q, IdentityFactory){
                 resolve();
             });
         });
+    };
+
+    service.authorizeCurrentUserForRoute = function(role)  {
+
+        if(IdentityFactory.isAuthorized(role)){
+            return true;
+        }else{
+            console.log("should reject");
+            return $q.reject(NOT_AUTHORIZED);
+        }
     };
 
     return service;

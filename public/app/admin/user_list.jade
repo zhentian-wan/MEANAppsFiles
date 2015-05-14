@@ -1,0 +1,8 @@
+//
+   Created by Answer1215 on 5/14/2015.
+
+
+.container(ng-controller="usrListController as usersCtrl")
+   table.table
+      tr(ng-repeat="user in usersCtrl.users")
+         td {{user.firstName + ' ' +user.lastName}}

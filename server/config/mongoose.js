@@ -19,7 +19,8 @@ module.exports = function(config){
         lastName: String,
         username: String,
         salt: String,
-        hash_pwd: String
+        hash_pwd: String,
+        role: [String]
     });
     userSchema.methods = {
         authenticate: function(passwordToMatch){
@@ -34,10 +35,10 @@ module.exports = function(config){
             var salt, hash;
             salt = createSalt();
             hash = hashPwd(salt, 'John');
-            User.create({firstName: 'John', lastName: 'Linquist', username: 'John', salt: salt, hash_pwd: hash});
+            User.create({firstName: 'John', lastName: 'Linquist', username: 'John', salt: salt, hash_pwd: hash, role: 'admin'});
             salt = createSalt();
             hash = hashPwd(salt, 'Ken');
-            User.create({firstName: 'Ken', lastName: 'CD', username: 'Ken', salt: salt, hash_pwd: hash});
+            User.create({firstName: 'Ken', lastName: 'CD', username: 'Ken', salt: salt, hash_pwd: hash, role: ''});
             salt = createSalt();
             hash = hashPwd(salt, 'Ben');
             User.create({firstName: 'Ben', lastName: 'Cophen', username: 'Ben', salt: salt, hash_pwd: hash});
