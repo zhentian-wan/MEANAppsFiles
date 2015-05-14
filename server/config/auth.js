@@ -1,6 +1,4 @@
-/**
- * Created by Answer1215 on 5/12/2015.
- */
+
 var passport = require('passport');
 
 exports.auth = function(req, res, next){

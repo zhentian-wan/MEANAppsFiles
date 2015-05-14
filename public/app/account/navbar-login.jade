@@ -1,10 +1,18 @@
 //
    Created by Answer1215 on 5/11/2015.
 
-.navbar-right
-   form.navbar-form(ng-controller="AccountController as account" ng-hide="account.isAuthed()")
+.navbar-right(ng-controller="AccountController as account")
+   form.navbar-form(ng-hide="account.isAuthed()")
       .form-group
          input.form-control(placeholder="username" ng-model="account.username")
       .form-group
          input.form-control(type="password" placeholder="Password" ng-model="account.password")
       button.btn.btn-primary(ng-click="account.signin(account.username, account.password)") Sign In
+   ul.nav.navbar-nav.navbar-right(ng-show="account.isAuthed()")
+      li.dropdown
+         a.dropdown-toggle(href="" data-toggle="dropdown") {{account.user.firstName + " " + account.user.lastName}}
+            b.caret
+         ul.dropdown-menu
+            li
+               a(href="" ng-click="account.signout()") Sign Out
+

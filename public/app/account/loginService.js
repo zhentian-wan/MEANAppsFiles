@@ -1,6 +1,4 @@
-/**
- * Created by Answer1215 on 5/12/2015.
- */
+
 
 function loginService($http, $q, IdentityFactory){
 
@@ -25,6 +23,16 @@ function loginService($http, $q, IdentityFactory){
                         resolve(false);
                     }
                 });
+        });
+    };
+
+    service.logoutUser = function() {
+
+        return $q(function(resolve, reject) {
+            $http.post('/logout', {logout: true}).then(function() {
+                IdentityFactory.currentUser = undefined;
+                resolve();
+            });
         });
     };
 

@@ -1,13 +1,18 @@
 /**
  * Created by Answer1215 on 5/12/2015.
  */
-function IdentityFactory() {
+function IdentityFactory($window) {
 
-    var factory = {};
+    var factory = {},
+        currentUser;
 
-    factory.currentUser = undefined;
+    if($window.bootstrappedUserObject ){
+        currentUser = $window.bootstrappedUserObject;
+    }
+
+    factory.currentUser = currentUser;
     factory.isAuthed = function() {
-        return  factory.currentUser != undefined ? true: false;
+        return  !!factory.currentUser;
     };
 
     return factory;

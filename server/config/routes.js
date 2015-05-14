@@ -1,6 +1,4 @@
-/**
- * Created by Answer1215 on 5/11/2015.
- */
+
 var auth = require('./auth');
 
 module.exports = function(app){
@@ -12,8 +10,15 @@ module.exports = function(app){
 
     app.post('/login', auth.auth);
 
+    app.post('/logout', function(req, res){
+        req.logout(); //added by passport
+        res.end();
+    });
+
     // All routes handled by this route, give client side to handle
     app.get('*', function(req,res) {
-        res.render('index');
+        res.render('index', {
+            bootstrappedUser: req.user  //server will remember the current user
+        });
     });
 }

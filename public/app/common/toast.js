@@ -25,7 +25,8 @@ function ToastFactory(Toast) {
             newestOnTop: false,
             showEasing: 'swing',
             hideEasing: 'linear',
-            preventDuplicates: true
+            preventDuplicates: true,
+            timeOut: 800
         };
     };
 
