@@ -5,7 +5,11 @@ function loginService($http, $q, IdentityFactory, UserResource, NOT_AUTHORIZED){
     var service = {};
 
     function extract(res){
-        return res.data;
+        if(res.data){
+            return res.data;
+        }else{
+            return res;
+        }
     }
 
     service.login = function(username, password) {
@@ -22,6 +26,8 @@ function loginService($http, $q, IdentityFactory, UserResource, NOT_AUTHORIZED){
                         //extend user object by adding user info
                         angular.extend(user, response.user);
                         IdentityFactory.currentUser = user;
+                        console.log("login ");
+                        console.log( IdentityFactory.currentUser);
                         resolve(true);
                     }else{
                         resolve(false);
@@ -45,10 +51,22 @@ function loginService($http, $q, IdentityFactory, UserResource, NOT_AUTHORIZED){
         if(IdentityFactory.isAuthorized(role)){
             return true;
         }else{
-            console.log("should reject");
             return $q.reject(NOT_AUTHORIZED);
         }
     };
+
+    service.createNewUser = function(newUserData) {
+        var newUser = new UserResource(newUserData);
+        return $q(function(resolve, reject) {
+            newUser.$save().then(function() {
+                IdentityFactory.currentUser = newUser;
+                resolve();
+            }, function(response) {
+                reject(response.reason);
+            })
+        });
+    };
+
 
     return service;
 }

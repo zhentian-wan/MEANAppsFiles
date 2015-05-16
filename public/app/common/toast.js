@@ -5,10 +5,6 @@
 function ToastFactory(Toast) {
 
     var factory = {};
-    
-    factory.setOptions = function() {
-
-    };
 
     factory.success = function(msg) {
         Toast.success(msg);
@@ -17,7 +13,11 @@ function ToastFactory(Toast) {
 
     factory.warning = function(msg) {
         Toast.warning(msg);
-    }
+    };
+
+    factory.error = function(msg) {
+        Toast.error(msg);
+    };
 
     factory.init = function() {
         Toast.options = {

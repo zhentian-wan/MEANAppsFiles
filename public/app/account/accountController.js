@@ -2,8 +2,6 @@
 function AccountController(loginService, ToastFactory, IdentityFactory, $location) {
     var vm = this;
 
-    vm.user = IdentityFactory.currentUser;
-
     vm.signin = function(username, password) {
         loginService.login(username, password).then(function(status){
             if(status){
@@ -26,8 +24,12 @@ function AccountController(loginService, ToastFactory, IdentityFactory, $locatio
     };
 
     vm.isAuthed = function() {
+        vm.user = IdentityFactory.currentUser;
         return IdentityFactory.isAuthed();
     };
+
+    vm.user = IdentityFactory.currentUser;
+
 }
 
 angular.module('app')

@@ -29,6 +29,10 @@ angular.module('app', ['ngResource', 'ngRoute'])
                 templateUrl: '/partials/admin/user_list',
                 controller: 'usrListController',
                 resolve: userRoleCheck.admin
+            })
+            .when('/signup', {
+                templateUrl: '/partials/account/signup',
+                controller: 'SignupController'
             });
     })
 

@@ -14,9 +14,8 @@ function IdentityFactory($window, UserResource) {
 
     factory.currentUser = currentUser;
     
-    
     factory.isAuthed = function() {
-        return  !!factory.currentUser;
+        return !!factory.currentUser;
     };
     factory.isAuthorized = function(role) {
         if(factory.currentUser && factory.currentUser.role.indexOf(role) > -1){

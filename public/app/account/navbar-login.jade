@@ -8,6 +8,8 @@
       .form-group
          input.form-control(type="password" placeholder="Password" ng-model="account.password")
       button.btn.btn-primary(ng-click="account.signin(account.username, account.password)") Sign In
+      | &nbsp;
+      a.btn.btn-info(href="/signup") Sign Up
    ul.nav.navbar-nav.navbar-right(ng-show="account.isAuthed()")
       li.dropdown
          a.dropdown-toggle(href="" data-toggle="dropdown") {{account.user.firstName + " " + account.user.lastName}}
