@@ -62,7 +62,7 @@ function loginService($http, $q, IdentityFactory, UserResource, NOT_AUTHORIZED){
                 IdentityFactory.currentUser = newUser;
                 resolve();
             }, function(response) {
-                reject(response.reason);
+                reject(response.data.reason);
             })
         });
     };

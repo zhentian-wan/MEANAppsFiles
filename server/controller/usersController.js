@@ -8,11 +8,12 @@ var User = require('mongoose').model('User'),
 exports.getUsers = function(req, res) {
     User.find({}).exec(function(err, collection) {
         res.send(collection);
-    })
+    });
 };
 
 exports.createUser = function(req, res, next) {
     var userData = req.body;
+    userData.username = userData.username.toLowerCase();
     userData.salt = encrypt.createSalt();
     userData.hash_pwd = encrypt.hashPwd(userData.salt, userData.password);
 
@@ -22,12 +23,12 @@ exports.createUser = function(req, res, next) {
                 err = new Error('Duplicate name');
             }
             res.status(400);
-            return res.send({reason: err.toString()});
+            res.send({reason: err.toString()});
         }
 
         req.login(user, function(err) {
             if(err) {return next(err);}
             res.send(user);
         });
-    })
+    });
 };

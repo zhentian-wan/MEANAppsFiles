@@ -1,6 +1,6 @@
 
 var auth = require('./auth'),
-    users = require('../controller/users'),
+    users = require('../controller/usersController'),
     mongoose = require('mongoose'),
     User = mongoose.model('User');
 
