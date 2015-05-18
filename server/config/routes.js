@@ -9,6 +9,7 @@ module.exports = function(app){
     //protect our server side resource
     app.get('/api/users', auth.requireRole('admin'), users.getUsers);
     app.post('/api/users', users.createUser);
+    app.put('/api/users', users.updateUser);
 
     //Set route for partials
     //When request comes for main partials, it will look for server/views/partials/mian

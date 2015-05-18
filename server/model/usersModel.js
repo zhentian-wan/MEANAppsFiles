@@ -15,6 +15,9 @@ var userSchema = mongoose.Schema({
 userSchema.methods = {
     authenticate: function(passwordToMatch){
         return encrypt.hashPwd(this.salt, passwordToMatch) === this.hash_pwd;
+    },
+    hasRole: function(role) {
+        return this.role.indexOf(role) > -1;
     }
 };
 
@@ -25,14 +28,14 @@ exports.createDefaultUsers = function() {
         if(_.size(collection) === 0){
             var salt, hash;
             salt = encrypt.createSalt();
-            hash = encrypt.hashPwd(salt, 'John');
-            User.create({firstName: 'John', lastName: 'Linquist', username: 'John', salt: salt, hash_pwd: hash, role: 'admin'});
+            hash = encrypt.hashPwd(salt, 'john');
+            User.create({firstName: 'john', lastName: 'Linquist', username: 'john', salt: salt, hash_pwd: hash, role: 'admin'});
             salt = encrypt.createSalt();
-            hash = encrypt.hashPwd(salt, 'Ken');
-            User.create({firstName: 'Ken', lastName: 'CD', username: 'Ken', salt: salt, hash_pwd: hash, role: ''});
+            hash = encrypt.hashPwd(salt, 'ken');
+            User.create({firstName: 'ken', lastName: 'CD', username: 'ken', salt: salt, hash_pwd: hash, role: ''});
             salt = encrypt.createSalt();
-            hash = encrypt.hashPwd(salt, 'Ben');
-            User.create({firstName: 'Ben', lastName: 'Cophen', username: 'Ben', salt: salt, hash_pwd: hash});
+            hash = encrypt.hashPwd(salt, 'ben');
+            User.create({firstName: 'ben', lastName: 'Cophen', username: 'ben', salt: salt, hash_pwd: hash});
         }
     })
 };

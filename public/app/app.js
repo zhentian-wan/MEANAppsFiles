@@ -16,6 +16,11 @@ angular.module('app', ['ngResource', 'ngRoute'])
                 auth: function(loginService) {
                     return loginService.authorizeCurrentUserForRoute('admin');
                 }
+            },
+            user:{
+                auth: function(loginService) {
+                    return loginService.authorizeAuthenicatedUserForRoute();
+                }
             }
         };
 
@@ -33,6 +38,10 @@ angular.module('app', ['ngResource', 'ngRoute'])
             .when('/signup', {
                 templateUrl: '/partials/account/signup',
                 controller: 'SignupController'
+            }).when('/profile', {
+                templateUrl: '/partials/account/profile',
+                controller: 'ProfileController',
+                resolve: userRoleCheck.user
             });
     })
 

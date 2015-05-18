@@ -26,8 +26,6 @@ function loginService($http, $q, IdentityFactory, UserResource, NOT_AUTHORIZED){
                         //extend user object by adding user info
                         angular.extend(user, response.user);
                         IdentityFactory.currentUser = user;
-                        console.log("login ");
-                        console.log( IdentityFactory.currentUser);
                         resolve(true);
                     }else{
                         resolve(false);
@@ -54,12 +52,35 @@ function loginService($http, $q, IdentityFactory, UserResource, NOT_AUTHORIZED){
             return $q.reject(NOT_AUTHORIZED);
         }
     };
+    
+    service.authorizeAuthenicatedUserForRoute = function() {
+        if(IdentityFactory.isAuthed()){
+            return true;
+        }else{
+            return $q.reject(NOT_AUTHORIZED);
+        }
+    };
 
     service.createNewUser = function(newUserData) {
         var newUser = new UserResource(newUserData);
         return $q(function(resolve, reject) {
             newUser.$save().then(function() {
                 IdentityFactory.currentUser = newUser;
+                resolve();
+            }, function(response) {
+                reject(response.data.reason);
+            })
+        });
+    };
+
+    service.updateProfile = function(newUserData) {
+        // when dealing wiht update, please clone the data to a new object
+        var clone = angular.copy(IdentityFactory.currentUser);
+        angular.extend(clone, newUserData);
+        console.log(clone);
+        return $q(function(resolve, reject) {
+            clone.$update().then(function() {
+                IdentityFactory.currentUser = clone;
                 resolve();
             }, function(response) {
                 reject(response.data.reason);

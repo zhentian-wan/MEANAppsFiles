@@ -27,8 +27,41 @@ exports.createUser = function(req, res, next) {
         }
 
         req.login(user, function(err) {
-            if(err) {return next(err);}
+            if(err) {
+                return next(err);
+            }
             res.send(user);
         });
     });
 };
+
+exports.updateUser = function(req, res) {
+    var userData = req.body;
+    
+    if(req.user._id != userData._id && !req.user.hasRole('admin')) {
+        res.status(403);
+        return res.end();
+    }
+
+    req.user.firstName = userData.firstName;
+    req.user.lastName = userData.lastName;
+    req.user.username = userData.username;
+    console.log(userData.password);
+    console.log(userData.password.length);
+    if(userData.password && userData.password.length > 0) {
+        req.user.salt = encrypt.createSalt();
+        req.user.hash_pwd = encrypt.hashPwd(req.user.salt, userData.password);
+        console.log(req.user.hash_pwd);
+    }
+
+    req.user.save(function(err) {
+        if(err){
+            res.status(400);
+            return res.send({reason: err.toString()});
+        }
+
+        res.send(req.user);
+
+    });
+}
+;

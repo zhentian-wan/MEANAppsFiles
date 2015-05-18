@@ -1,0 +1,26 @@
+.container(ng-controller="ProfileController as profileCtrl")
+   .well
+      form.form-horizontal(name="profileForm")
+         legend User Profile
+         .form-group
+            label.col-md-2.control-label(for="username") Username
+            .col-md-10
+               input.form-control(name="username", type="text", placeholder="Username" ng-model="profileCtrl.username")
+         .form-group
+            label.col-md-2.control-label(for="fname") First Name
+            .col-md-10
+               input.form-control(name="fname", type="text", placeholder="First Name" ng-model="profileCtrl.fname")
+         .form-group
+            label.col-md-2.control-label(for="lname") Last Name
+            .col-md-10
+               input.form-control(name="lname", type="text", placeholder="Last Name" ng-model="profileCtrl.lname")
+         .form-group
+            label.col-md-2.control-label(for="password") Password
+            .col-md-10
+               input.form-control(name="password", type="password", placeholder="password" ng-model="profileCtrl.password")
+         .form-group
+            .col-md-10.col-lg-offset-2
+               .pull-right
+                  button.btn.btn-info(ng-click="profileCtrl.updateProfile()" ng-disable="profileForm.$invalid") Update
+                  | &nbsp;
+                  a.btn.btn-default(href="/") Cancel
