@@ -15,6 +15,7 @@
             th Publish Date
       tbody
          tr(ng-repeat="course in courseCtrl.courses | filter: courseCtrl.searchText | orderBy: courseCtrl.sortOrder")
-            td {{course.title}}
+            td
+               a(href="/courses/{{course._id}}") {{course.title}}
             td {{course.published | date}}
 

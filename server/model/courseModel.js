@@ -20,11 +20,11 @@ function createDefaultCourss() {
             Course.create({tags: ['C#'],title: 'C#', featured: true, published: new Date('2011', '09', '11')});
             Course.create({tags: ["Java"],title: 'Java', featured: true, published: new Date('2010', '04', '28')});
             Course.create({tags: ["Javascript"],title: 'Javascript', featured: true, published: new Date('2011', '11', '11')});
-            Course.create({tags: ["Javascript"],title: 'jQuery', featured: false, published: new Date('2015', '03', '05')});
-            Course.create({tags: ["Javascirpt"],title: 'Node.js', featured: true, published: new Date('2014', '05', '30')});
-            Course.create({tags: ["Javascirpt"],title: 'AngularJS', featured: true, published: new Date('2014', '04', '05')});
-            Course.create({tags: ["Javascirpt"],title: 'Backbone.js', featured: false, published: new Date('2015', '06', '05')});
-            Course.create({tags: ["Javascirpt"],title: 'Express', featured: true, published: new Date('2014', '09', '15')});
+            Course.create({tags: ["Javascript", "jQuery"],title: 'jQuery', featured: false, published: new Date('2015', '03', '05')});
+            Course.create({tags: ["Javascirpt",'Node'],title: 'Node.js', featured: true, published: new Date('2014', '05', '30')});
+            Course.create({tags: ["Javascirpt", 'AngularJS'],title: 'AngularJS', featured: true, published: new Date('2014', '04', '05')});
+            Course.create({tags: ["Javascirpt", "BackboneJS"],title: 'Backbone.js', featured: false, published: new Date('2015', '06', '05')});
+            Course.create({tags: ["Javascirpt", "Node", "ExpressJS"],title: 'Express', featured: true, published: new Date('2014', '09', '15')});
         }
     });
 }
