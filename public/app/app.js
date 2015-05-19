@@ -30,6 +30,10 @@ angular.module('app', ['ngResource', 'ngRoute'])
                 templateUrl: '/partials/main/main',
                 controller: 'MainController'
             })
+            .when('/courses', {
+                templateUrl: '/partials/course/course_list',
+                controller: 'CoursesController'
+            })
             .when('/admin/users', {
                 templateUrl: '/partials/admin/user_list',
                 controller: 'usrListController',
