@@ -7,8 +7,8 @@ function CoursesController(CourseCachedService) {
     var vm = this;
     vm.courses = CourseCachedService.query();
 
-    vm.sortOptions = [{value: "title",  text: "Sort by Title"},
-        {value: "published", text:"Sort by Publish Date"}];
+    vm.sortOptions = [{value: "title", text: "Sort by Title"},
+        {value: "published", text: "Sort by Publish Date"}];
 
     vm.sortOrder = vm.sortOptions[0].value;
 }

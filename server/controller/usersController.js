@@ -30,17 +30,18 @@ exports.createUser = function(req, res, next) {
             if(err) {
                 return next(err);
             }
-            res.send(user);
+            res.status(201).send(user);
         });
     });
 };
 
 exports.updateUser = function(req, res) {
     var userData = req.body;
-    
+
     if(req.user._id != userData._id && !req.user.hasRole('admin')) {
-        res.status(403);
-        return res.end();
+        //  res.status(403);
+        //  return res.end();
+        return res.sendStatus(403);
     }
 
     req.user.firstName = userData.firstName;
@@ -54,7 +55,7 @@ exports.updateUser = function(req, res) {
     }
 
     req.user.save(function(err) {
-        if(err){
+        if(err) {
             res.status(400);
             return res.send({reason: err.toString()});
         }
@@ -62,5 +63,20 @@ exports.updateUser = function(req, res) {
         res.send(req.user);
 
     });
-}
-;
+};
+
+
+exports.deleteUserById = function(req, res) {
+    if(req.params._id) {
+        User.findOne({_id: req.params.id}).remove().exec(function(err) {
+            if(err) {
+                //TODO, not found
+                return res.sendStatus(403);
+            }
+
+            res.sendStatus(200);
+        });
+    } else {
+        res.sendStatus(403);
+    }
+};

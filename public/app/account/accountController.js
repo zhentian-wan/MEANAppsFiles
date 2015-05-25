@@ -1,13 +1,12 @@
-
 function AccountController(loginService, ToastFactory, IdentityFactory, $location) {
     var vm = this;
 
     vm.signin = function(username, password) {
-        loginService.login(username, password).then(function(status){
-            if(status){
+        loginService.login(username, password).then(function(status) {
+            if(status) {
                 vm.user = IdentityFactory.currentUser;
                 ToastFactory.success('Logged in!');
-            }else{
+            } else {
                 ToastFactory.warning("Cannot log in!");
             }
         })

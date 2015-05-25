@@ -5,15 +5,15 @@ var mongoose = require('mongoose'),
 
 //Users data
 var userSchema = mongoose.Schema({
-    firstName: {type:String, required: '{PATH} is required!'},
-    lastName: {type:String, required: '{PATH} is required!'},
-    username: {type:String, required: '{PATH} is required!', unique: true},
+    firstName: {type: String, required: '{PATH} is required!'},
+    lastName: {type: String, required: '{PATH} is required!'},
+    username: {type: String, required: '{PATH} is required!', unique: true},
     salt: String,
     hash_pwd: String,
     role: [String]
 });
 userSchema.methods = {
-    authenticate: function(passwordToMatch){
+    authenticate: function(passwordToMatch) {
         return encrypt.hashPwd(this.salt, passwordToMatch) === this.hash_pwd;
     },
     hasRole: function(role) {
@@ -24,12 +24,19 @@ userSchema.methods = {
 var User = mongoose.model('User', userSchema);
 
 exports.createDefaultUsers = function() {
-    User.find({}).exec(function(err, collection){
-        if(_.size(collection) === 0){
+    User.find({}).exec(function(err, collection) {
+        if(_.size(collection) === 0) {
             var salt, hash;
             salt = encrypt.createSalt();
             hash = encrypt.hashPwd(salt, 'john');
-            User.create({firstName: 'john', lastName: 'Linquist', username: 'john', salt: salt, hash_pwd: hash, role: 'admin'});
+            User.create({
+                firstName: 'john',
+                lastName: 'Linquist',
+                username: 'john',
+                salt: salt,
+                hash_pwd: hash,
+                role: 'admin'
+            });
             salt = encrypt.createSalt();
             hash = encrypt.hashPwd(salt, 'ken');
             User.create({firstName: 'ken', lastName: 'CD', username: 'ken', salt: salt, hash_pwd: hash, role: ''});

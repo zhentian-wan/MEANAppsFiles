@@ -16,7 +16,7 @@ function ProfileController(IdentityFactory, loginService, Toast) {
             lastName: vm.lname
         };
 
-        if(vm.password && vm.password.length > 0){
+        if(vm.password && vm.password.length > 0) {
             userData.password = vm.password;
         }
 

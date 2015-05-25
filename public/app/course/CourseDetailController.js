@@ -7,7 +7,7 @@ function CourseDetailController($routeParams, CourseCachedService) {
     vm.course = {};
 
     CourseCachedService.query().$promise.then(function(courses) {
-        vm.course = _.find(courses, {'_id':  $routeParams.id});
+        vm.course = _.find(courses, {'_id': $routeParams.id});
     })
 }
 

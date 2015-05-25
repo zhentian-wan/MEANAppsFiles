@@ -21,7 +21,7 @@ function ToastFactory(Toast) {
 
     factory.init = function() {
         Toast.options = {
-            closeButton:  true,
+            closeButton: true,
             newestOnTop: false,
             showEasing: 'swing',
             hideEasing: 'linear',
@@ -35,8 +35,8 @@ function ToastFactory(Toast) {
     return factory;
 }
 
-    angular.module('app')
+angular.module('app')
 
-        .value('Toast', toastr)
+    .value('Toast', toastr)
 
-        .factory('ToastFactory', ToastFactory);
+    .factory('ToastFactory', ToastFactory);

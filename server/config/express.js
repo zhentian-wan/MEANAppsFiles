@@ -26,7 +26,7 @@ module.exports = function(app, config) {
     // Set jade
     app.set('view engine', 'jade');
 
-    //logging
+    //logging, check more about morgan TODO
     app.use(logger('dev'));
 
     //cookieParser
@@ -35,7 +35,7 @@ module.exports = function(app, config) {
     //bodyparser
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
-    app.use(session({secret: 'multi vision unicorns', resave:false, saveUninitialized:false}));
+    app.use(session({secret: 'multi vision unicorns', resave: false, saveUninitialized: false}));
     app.use(passport.initialize());
     app.use(passport.session());
     //Use stylus
@@ -47,5 +47,5 @@ module.exports = function(app, config) {
     ));
 
     //Any request comes in, will find the same filename file in public dir
-    app.use(express.static( config.rootPath  + '/public'));
+    app.use(express.static(config.rootPath + '/public'));
 };

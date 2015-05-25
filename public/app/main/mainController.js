@@ -5,8 +5,6 @@ function MainController(CourseCachedService) {
     var vm = this;
 
     vm.courses = CourseCachedService.query();
-
-
 }
 
 angular.module('app')

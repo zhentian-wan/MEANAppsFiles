@@ -1,22 +1,23 @@
-
 var passport = require('passport');
 
-exports.auth = function(req, res, next){
+exports.auth = function(req, res, next) {
 
     req.body.username = req.body.username.toLowerCase();
-    console.log(req.body);  
-    var auth = passport.authenticate('local', function(err, user){
+    console.log(req.body);
+    var auth = passport.authenticate('local', function(err, user) {
         console.log(user);
-        if(err){
+        if(err) {
             return next(err);
         }
 
-        if(!user){
+        if(!user) {
             res.send({success: false});
         }
 
-        req.logIn(user, function(err){
-            if(err) {return next(err);}
+        req.logIn(user, function(err) {
+            if(err) {
+                return next(err);
+            }
             res.send({success: true, user: user});
         })
     });
@@ -24,11 +25,11 @@ exports.auth = function(req, res, next){
     auth(req, res, next);
 };
 
-exports.requiresApiLogin =  function(req, res, next){
-    if(!req.isAuthenticated()){
+exports.requiresApiLogin = function(req, res, next) {
+    if(!req.isAuthenticated()) {
         res.status(403);
         res.end();
-    }else{
+    } else {
         next();
     }
 };
@@ -36,10 +37,10 @@ exports.requiresApiLogin =  function(req, res, next){
 
 exports.requireRole = function(role) {
     return function(req, res, next) {
-        if(!req.isAuthenticated() || req.user.role.indexOf(role) === -1){
+        if(!req.isAuthenticated() || req.user.role.indexOf(role) === -1) {
             res.status(403);
             res.end();
-        }else{
+        } else {
             next();
         }
     };

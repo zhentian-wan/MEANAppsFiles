@@ -1,6 +1,6 @@
 function AppController($rootScope, NOT_AUTHORIZED, $location) {
     $rootScope.$on('$routeChangeError', function(event, current, previous, rejction) {
-        if(rejction === NOT_AUTHORIZED){
+        if(rejction === NOT_AUTHORIZED) {
             $location.path('/');
         }
     })
@@ -17,7 +17,7 @@ angular.module('app', ['ngResource', 'ngRoute'])
                     return loginService.authorizeCurrentUserForRoute('admin');
                 }
             },
-            user:{
+            user: {
                 auth: function(loginService) {
                     return loginService.authorizeAuthenicatedUserForRoute();
                 }

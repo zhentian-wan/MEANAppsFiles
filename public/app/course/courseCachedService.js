@@ -7,7 +7,7 @@ function CourseCachedService(CourseService) {
 
     return {
         query: function() {
-            if(!courseList){
+            if(!courseList) {
                 courseList = CourseService.query();
             }
 
