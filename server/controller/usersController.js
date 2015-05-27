@@ -67,16 +67,15 @@ exports.updateUser = function(req, res) {
 
 
 exports.deleteUserById = function(req, res) {
-    if(req.params._id) {
+    if(req.user.hasRole('admin') && req.params.id) {
         User.findOne({_id: req.params.id}).remove().exec(function(err) {
             if(err) {
-                //TODO, not found
-                return res.sendStatus(403);
-            }
 
+                return res.status(403).json({reason: err.toString()});
+            }
             res.sendStatus(200);
         });
     } else {
-        res.sendStatus(403);
+        res.status(403).json({reason: 'You do not have admin role or user id is wrong'});
     }
 };

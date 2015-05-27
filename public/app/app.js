@@ -7,9 +7,13 @@ function AppController($rootScope, NOT_AUTHORIZED, $location) {
 }
 
 
-angular.module('app', ['ngResource', 'ngRoute'])
+angular.module('app', [
+    'ngResource',
+    'ngRoute',
+    'ngAnimate',
+    'ui.router'])
 
-    .config(function($routeProvider, $locationProvider) {
+    .config(function($routeProvider, $locationProvider, $stateProvider, $urlRouterProvider) {
 
         var userRoleCheck = {
             admin: {
@@ -51,6 +55,13 @@ angular.module('app', ['ngResource', 'ngRoute'])
                 controller: 'ProfileController',
                 resolve: userRoleCheck.user
             });
+
+        /*$stateProvider.state('app', {
+            url: '',
+            abstract: true
+        });
+
+        $urlRouterProvider.otherwise('/');*/
     })
 
     .value('NOT_AUTHORIZED', 'Not authorized')

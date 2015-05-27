@@ -4,5 +4,8 @@
 
 .container(ng-controller="usrListController as usersCtrl")
    table.table
-      tr(ng-repeat="user in usersCtrl.users")
-         td {{user.firstName + ' ' +user.lastName}}
+      tr.row(ng-repeat="user in usersCtrl.users")
+         td.col-sm-6 {{user.firstName + ' ' +user.lastName}}
+         td.col-sm-5.col-sm-offset-1
+               button.btn.btn-danger(ng-click="usersCtrl.removeUser(user)") Delete
+
