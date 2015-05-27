@@ -22,6 +22,6 @@ function AdminService($q) {
 }
 
 
-angular.module('app')
+angular.module('app.models.user.admin-models', [])
 
     .service('AdminService', AdminService);

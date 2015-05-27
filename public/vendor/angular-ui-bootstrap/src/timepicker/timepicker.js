@@ -216,7 +216,7 @@ angular.module('ui.bootstrap.timepicker', [])
 
     if ( isNaN(date) ) {
       ngModelCtrl.$setValidity('time', false);
-      $log.error('Timepicker directive: "ng-model" value must be a Date object, a number of milliseconds since 01.01.1970 or a string representing an RFC2822 or ISO 8601 date.');
+      $log.error('Timepicker directive: "ng-models" value must be a Date object, a number of milliseconds since 01.01.1970 or a string representing an RFC2822 or ISO 8601 date.');
     } else {
       if ( date ) {
         selected = date;
@@ -226,7 +226,7 @@ angular.module('ui.bootstrap.timepicker', [])
     }
   };
 
-  // Call internally when we know that model is valid.
+  // Call internally when we know that models is valid.
   function refresh( keyboardChange ) {
     makeValid();
     ngModelCtrl.$setViewValue( new Date(selected) );

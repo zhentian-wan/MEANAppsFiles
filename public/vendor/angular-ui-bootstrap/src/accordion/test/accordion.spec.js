@@ -190,7 +190,7 @@ describe('accordion', function () {
         expect(groups.length).toEqual(0);
       });
 
-      it('should have a panel for each model item', function() {
+      it('should have a panel for each models item', function() {
         scope.groups = model;
         scope.$digest();
         groups = element.find('.panel');
@@ -201,7 +201,7 @@ describe('accordion', function () {
         expect(findGroupBody(1).text().trim()).toEqual('Content 2');
       });
 
-      it('should react properly on removing items from the model', function () {
+      it('should react properly on removing items from the models', function () {
         scope.groups = model;
         scope.$digest();
         groups = element.find('.panel');

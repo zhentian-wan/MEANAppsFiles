@@ -232,7 +232,7 @@ angular.module('ui.bootstrap.carousel', [])
  * @description
  * Creates a slide inside a {@link ui.bootstrap.carousel.directive:carousel carousel}.  Must be placed as a child of a carousel element.
  *
- * @param {boolean=} active Model binding, whether or not this slide is currently active.
+ * @param {boolean=} active models binding, whether or not this slide is currently active.
  * @param {number=} index The index of the slide. The slides will be sorted by this parameter.
  *
  * @example
@@ -248,7 +248,7 @@ angular.module('ui.bootstrap.carousel', [])
       </div>
     </slide>
   </carousel>
-  Interval, in milliseconds: <input type="number" ng-model="myInterval">
+  Interval, in milliseconds: <input type="number" ng-models="myInterval">
   <br />Enter a negative number to stop the interval.
 </div>
   </file>

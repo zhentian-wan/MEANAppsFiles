@@ -11,57 +11,18 @@ angular.module('app', [
     'ngResource',
     'ngRoute',
     'ngAnimate',
-    'ui.router'])
+    'ui.router',
+    'app.main',
+    'app.user'])
 
-    .config(function($routeProvider, $locationProvider, $stateProvider, $urlRouterProvider) {
+    .config(function($stateProvider, $urlRouterProvider) {
 
-        var userRoleCheck = {
-            admin: {
-                auth: function(loginService) {
-                    return loginService.authorizeCurrentUserForRoute('admin');
-                }
-            },
-            user: {
-                auth: function(loginService) {
-                    return loginService.authorizeAuthenicatedUserForRoute();
-                }
-            }
-        };
-
-        $locationProvider.html5Mode(true);
-        $routeProvider
-            .when('/', {
-                templateUrl: '/partials/main/main',
-                controller: 'MainController'
-            })
-            .when('/courses', {
-                templateUrl: '/partials/course/course_list',
-                controller: 'CoursesController'
-            })
-            .when('/courses/:id', {
-                templateUrl: '/partials/course/course_detail',
-                controller: 'CourseDetailController'
-            })
-            .when('/admin/users', {
-                templateUrl: '/partials/admin/user_list',
-                controller: 'usrListController',
-                resolve: userRoleCheck.admin
-            })
-            .when('/signup', {
-                templateUrl: '/partials/account/signup',
-                controller: 'SignupController'
-            }).when('/profile', {
-                templateUrl: '/partials/account/profile',
-                controller: 'ProfileController',
-                resolve: userRoleCheck.user
-            });
-
-        /*$stateProvider.state('app', {
+        $stateProvider.state('app', {
             url: '',
             abstract: true
         });
 
-        $urlRouterProvider.otherwise('/');*/
+        $urlRouterProvider.otherwise('/');
     })
 
     .value('NOT_AUTHORIZED', 'Not authorized')

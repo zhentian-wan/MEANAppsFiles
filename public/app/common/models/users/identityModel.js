@@ -28,6 +28,6 @@ function IdentityFactory($window, UserResource) {
     return factory;
 }
 
-angular.module('app')
+angular.module('app.models.user-models')
 
     .factory('IdentityFactory', IdentityFactory);

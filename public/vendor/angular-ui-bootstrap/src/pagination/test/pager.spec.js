@@ -8,7 +8,7 @@ describe('pager directive', function () {
     $rootScope.total = 47; // 5 pages
     $rootScope.currentPage = 3;
     $document = _$document_;
-    element = $compile('<pager total-items="total" ng-model="currentPage"></pager>')($rootScope);
+    element = $compile('<pager total-items="total" ng-models="currentPage"></pager>')($rootScope);
     $rootScope.$digest();
   }));
 
@@ -23,7 +23,7 @@ describe('pager directive', function () {
   function clickPaginationEl(index) {
     getPaginationEl(index).find('a').click();
   }
-  
+
   function getPaginationLinkEl(elem, index) {
     return elem.find('li').eq(index).find('a');
   }
@@ -85,7 +85,7 @@ describe('pager directive', function () {
 
   it('executes the `ng-change` expression when an element is clicked', function() {
     $rootScope.selectPageHandler = jasmine.createSpy('selectPageHandler');
-    element = $compile('<pager total-items="total" ng-model="currentPage" ng-change="selectPageHandler()"></pager>')($rootScope);
+    element = $compile('<pager total-items="total" ng-models="currentPage" ng-change="selectPageHandler()"></pager>')($rootScope);
     $rootScope.$digest();
 
     clickPaginationEl(-1);
@@ -104,13 +104,13 @@ describe('pager directive', function () {
   it('should blur the "next" link after it has been clicked', function () {
     $document.find('body').append(element);
     var linkEl = getPaginationLinkEl(element, -1);
-    
+
     linkEl.focus();
     expect(linkEl).toHaveFocus();
-    
+
     linkEl.click();
     expect(linkEl).not.toHaveFocus();
-    
+
     element.remove();
   });
 
@@ -126,11 +126,11 @@ describe('pager directive', function () {
 
     element.remove();
   });
-  
+
   describe('`items-per-page`', function () {
     beforeEach(function() {
       $rootScope.perpage = 5;
-      element = $compile('<pager total-items="total" items-per-page="perpage" ng-model="currentPage"></pager>')($rootScope);
+      element = $compile('<pager total-items="total" items-per-page="perpage" ng-models="currentPage"></pager>')($rootScope);
       $rootScope.$digest();
     });
 
@@ -164,7 +164,7 @@ describe('pager directive', function () {
   describe('`num-pages`', function () {
     beforeEach(function() {
       $rootScope.numpg = null;
-      element = $compile('<pager total-items="total" ng-model="currentPage" num-pages="numpg"></pager>')($rootScope);
+      element = $compile('<pager total-items="total" ng-models="currentPage" num-pages="numpg"></pager>')($rootScope);
       $rootScope.$digest();
     });
 
@@ -180,7 +180,7 @@ describe('pager directive', function () {
       pagerConfig.previousText = 'PR';
       pagerConfig.nextText = 'NE';
       pagerConfig.align = false;
-      element = $compile('<pager total-items="total" ng-model="currentPage"></pager>')($rootScope);
+      element = $compile('<pager total-items="total" ng-models="currentPage"></pager>')($rootScope);
       $rootScope.$digest();
     }));
     afterEach(inject(function(pagerConfig) {
@@ -201,7 +201,7 @@ describe('pager directive', function () {
 
   describe('override configuration from attributes', function () {
     beforeEach(function() {
-      element = $compile('<pager align="false" previous-text="<" next-text=">" total-items="total" ng-model="currentPage"></pager>')($rootScope);
+      element = $compile('<pager align="false" previous-text="<" next-text=">" total-items="total" ng-models="currentPage"></pager>')($rootScope);
       $rootScope.$digest();
     });
 
@@ -222,7 +222,7 @@ describe('pager directive', function () {
     it('changes "previous" & "next" text from interpolated attributes', function() {
       $rootScope.previousText = '<<';
       $rootScope.nextText = '>>';
-      element = $compile('<pager align="false" previous-text="{{previousText}}" next-text="{{nextText}}" total-items="total" ng-model="currentPage"></pager>')($rootScope);
+      element = $compile('<pager align="false" previous-text="{{previousText}}" next-text="{{nextText}}" total-items="total" ng-models="currentPage"></pager>')($rootScope);
       $rootScope.$digest();
 
       expect(getPaginationEl(0).text()).toBe('<<');

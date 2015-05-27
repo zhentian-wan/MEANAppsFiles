@@ -1,7 +1,7 @@
 /**
  * Created by Answer1215 on 5/14/2015.
  */
-angular.module('app')
+angular.module('app.models.user-models', [])
 
     .factory('UserResource', function($resource){
         var UserResource = $resource('/api/users/:id', {_id: "@id"}, {

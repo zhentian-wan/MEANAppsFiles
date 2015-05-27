@@ -1,5 +1,6 @@
 function AccountController(loginService, ToastFactory, IdentityFactory, $location) {
     var vm = this;
+    vm.user = {};
 
     vm.signin = function(username, password) {
         loginService.login(username, password).then(function(status) {
@@ -31,6 +32,22 @@ function AccountController(loginService, ToastFactory, IdentityFactory, $locatio
 
 }
 
-angular.module('app')
+angular.module('app.user', [
+    'app.models.user-models',
+    'app.user.admin'
+])
+
+    .config(function($stateProvider) {
+
+        $stateProvider.state('app.signup', {
+            url: '/signup',
+            views: {
+                'main@': {
+                    templateUrl: '/partials/users/signup',
+                    controller: 'SignupController'
+                }
+            }
+        })
+    })
 
     .controller('AccountController', AccountController);

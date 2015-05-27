@@ -16,10 +16,10 @@ describe('buttons', function () {
       return el;
     };
 
-    //model -> UI
-    it('should work correctly with default model values', function () {
+    //models -> UI
+    it('should work correctly with default models values', function () {
       $scope.model = false;
-      var btn = compileButton('<button ng-model="model" btn-checkbox>click</button>', $scope);
+      var btn = compileButton('<button ng-models="models" btn-checkbox>click</button>', $scope);
       expect(btn).not.toHaveClass('active');
 
       $scope.model = true;
@@ -27,9 +27,9 @@ describe('buttons', function () {
       expect(btn).toHaveClass('active');
     });
 
-    it('should bind custom model values', function () {
+    it('should bind custom models values', function () {
       $scope.model = 1;
-      var btn = compileButton('<button ng-model="model" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">click</button>', $scope);
+      var btn = compileButton('<button ng-models="models" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">click</button>', $scope);
       expect(btn).toHaveClass('active');
 
       $scope.model = 0;
@@ -37,10 +37,10 @@ describe('buttons', function () {
       expect(btn).not.toHaveClass('active');
     });
 
-    //UI-> model
-    it('should toggle default model values on click', function () {
+    //UI-> models
+    it('should toggle default models values on click', function () {
       $scope.model = false;
-      var btn = compileButton('<button ng-model="model" btn-checkbox>click</button>', $scope);
+      var btn = compileButton('<button ng-models="models" btn-checkbox>click</button>', $scope);
 
       btn.click();
       expect($scope.model).toEqual(true);
@@ -51,9 +51,9 @@ describe('buttons', function () {
       expect(btn).not.toHaveClass('active');
     });
 
-    it('should toggle custom model values on click', function () {
+    it('should toggle custom models values on click', function () {
       $scope.model = 0;
-      var btn = compileButton('<button ng-model="model" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">click</button>', $scope);
+      var btn = compileButton('<button ng-models="models" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">click</button>', $scope);
 
       btn.click();
       expect($scope.model).toEqual(1);
@@ -68,7 +68,7 @@ describe('buttons', function () {
 
       $scope.model = 1;
       $scope.trueVal = 1;
-      var btn = compileButton('<button ng-model="model" btn-checkbox btn-checkbox-true="trueVal">click</button>', $scope);
+      var btn = compileButton('<button ng-models="models" btn-checkbox btn-checkbox-true="trueVal">click</button>', $scope);
 
       expect(btn).toHaveClass('active');
       expect($scope.model).toEqual(1);
@@ -99,7 +99,7 @@ describe('buttons', function () {
 
       it('should use default config when buttonConfig.activeClass and buttonConfig.toggleEvent is false', function () {
         $scope.model = false;
-        var btn = compileButton('<button ng-model="model" btn-checkbox>click</button>', $scope);
+        var btn = compileButton('<button ng-models="models" btn-checkbox>click</button>', $scope);
         expect(btn).not.toHaveClass('active');
 
         $scope.model = true;
@@ -118,9 +118,9 @@ describe('buttons', function () {
       return el.find('button');
     };
 
-    //model -> UI
-    it('should work correctly set active class based on model', function () {
-      var btns = compileButtons('<button ng-model="model" btn-radio="1">click1</button><button ng-model="model" btn-radio="2">click2</button>', $scope);
+    //models -> UI
+    it('should work correctly set active class based on models', function () {
+      var btns = compileButtons('<button ng-models="models" btn-radio="1">click1</button><button ng-models="models" btn-radio="2">click2</button>', $scope);
       expect(btns.eq(0)).not.toHaveClass('active');
       expect(btns.eq(1)).not.toHaveClass('active');
 
@@ -130,9 +130,9 @@ describe('buttons', function () {
       expect(btns.eq(1)).toHaveClass('active');
     });
 
-    //UI->model
-    it('should work correctly set active class based on model', function () {
-      var btns = compileButtons('<button ng-model="model" btn-radio="1">click1</button><button ng-model="model" btn-radio="2">click2</button>', $scope);
+    //UI->models
+    it('should work correctly set active class based on models', function () {
+      var btns = compileButtons('<button ng-models="models" btn-radio="1">click1</button><button ng-models="models" btn-radio="2">click2</button>', $scope);
       expect($scope.model).toBeUndefined();
 
       btns.eq(0).click();
@@ -149,7 +149,7 @@ describe('buttons', function () {
     it('should watch btn-radio values and update state accordingly', function () {
       $scope.values = ['value1', 'value2'];
 
-      var btns = compileButtons('<button ng-model="model" btn-radio="values[0]">click1</button><button ng-model="model" btn-radio="values[1]">click2</button>', $scope);
+      var btns = compileButtons('<button ng-models="models" btn-radio="values[0]">click1</button><button ng-models="models" btn-radio="values[1]">click2</button>', $scope);
       expect(btns.eq(0)).not.toHaveClass('active');
       expect(btns.eq(1)).not.toHaveClass('active');
 
@@ -167,7 +167,7 @@ describe('buttons', function () {
 
     it('should do nothing when click active radio', function () {
       $scope.model = 1;
-      var btns = compileButtons('<button ng-model="model" btn-radio="1">click1</button><button ng-model="model" btn-radio="2">click2</button>', $scope);
+      var btns = compileButtons('<button ng-models="models" btn-radio="1">click1</button><button ng-models="models" btn-radio="2">click2</button>', $scope);
       expect(btns.eq(0)).toHaveClass('active');
       expect(btns.eq(1)).not.toHaveClass('active');
 
@@ -178,9 +178,9 @@ describe('buttons', function () {
     });
 
     describe('uncheckable', function () {
-      //model -> UI
-      it('should set active class based on model', function () {
-        var btns = compileButtons('<button ng-model="model" btn-radio="1" uncheckable>click1</button><button ng-model="model" btn-radio="2" uncheckable>click2</button>', $scope);
+      //models -> UI
+      it('should set active class based on models', function () {
+        var btns = compileButtons('<button ng-models="models" btn-radio="1" uncheckable>click1</button><button ng-models="models" btn-radio="2" uncheckable>click2</button>', $scope);
         expect(btns.eq(0)).not.toHaveClass('active');
         expect(btns.eq(1)).not.toHaveClass('active');
 
@@ -190,9 +190,9 @@ describe('buttons', function () {
         expect(btns.eq(1)).toHaveClass('active');
       });
 
-      //UI->model
-      it('should unset active class based on model', function () {
-        var btns = compileButtons('<button ng-model="model" btn-radio="1" uncheckable>click1</button><button ng-model="model" btn-radio="2" uncheckable>click2</button>', $scope);
+      //UI->models
+      it('should unset active class based on models', function () {
+        var btns = compileButtons('<button ng-models="models" btn-radio="1" uncheckable>click1</button><button ng-models="models" btn-radio="2" uncheckable>click2</button>', $scope);
         expect($scope.model).toBeUndefined();
 
         btns.eq(0).click();
@@ -209,7 +209,7 @@ describe('buttons', function () {
       it('should watch btn-radio values and update state', function () {
         $scope.values = ['value1', 'value2'];
 
-        var btns = compileButtons('<button ng-model="model" btn-radio="values[0]" uncheckable>click1</button><button ng-model="model" btn-radio="values[1]" uncheckable>click2</button>', $scope);
+        var btns = compileButtons('<button ng-models="models" btn-radio="values[0]" uncheckable>click1</button><button ng-models="models" btn-radio="values[1]" uncheckable>click2</button>', $scope);
         expect(btns.eq(0)).not.toHaveClass('active');
         expect(btns.eq(1)).not.toHaveClass('active');
 

@@ -14,7 +14,7 @@ function SignupController(loginService, Toast, $location) {
         };
 
         loginService.createNewUser(vm.newUserData).then(function() {
-            Toast.success('Your account has been created!');
+            Toast.success('Your users has been created!');
             $location.path('/');
         }, function(reason) {
             Toast.error(reason);
@@ -22,6 +22,6 @@ function SignupController(loginService, Toast, $location) {
     }
 }
 
-angular.module('app')
+angular.module('app.user')
 
     .controller('SignupController', SignupController);

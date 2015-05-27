@@ -8,7 +8,7 @@ describe('pagination directive', function () {
     $rootScope.total = 47; // 5 pages
     $rootScope.currentPage = 3;
     $document = _$document_;
-    element = $compile('<pagination total-items="total" ng-model="currentPage"></pagination>')($rootScope);
+    element = $compile('<pagination total-items="total" ng-models="currentPage"></pagination>')($rootScope);
     $rootScope.$digest();
   }));
 
@@ -23,7 +23,7 @@ describe('pagination directive', function () {
   function clickPaginationEl(index) {
     getPaginationEl(index).find('a').click();
   }
-  
+
   function getPaginationLinkEl(elem, index) {
     return elem.find('li').eq(index).find('a');
   }
@@ -130,46 +130,46 @@ describe('pagination directive', function () {
   it('should blur a page link after it has been clicked', function () {
     $document.find('body').append(element);
     var linkEl = getPaginationLinkEl(element, 2);
-    
+
     linkEl.focus();
     expect(linkEl).toHaveFocus();
-    
+
     linkEl.click();
     expect(linkEl).not.toHaveFocus();
-    
+
     element.remove();
   });
-  
+
   it('should blur the "next" link after it has been clicked', function () {
     $document.find('body').append(element);
     var linkEl = getPaginationLinkEl(element, -1);
-    
+
     linkEl.focus();
     expect(linkEl).toHaveFocus();
-    
+
     linkEl.click();
     expect(linkEl).not.toHaveFocus();
-    
+
     element.remove();
   });
-  
+
   it('should blur the "prev" link after it has been clicked', function () {
     $document.find('body').append(element);
     var linkEl = getPaginationLinkEl(element, 0);
-    
+
     linkEl.focus();
     expect(linkEl).toHaveFocus();
-    
+
     linkEl.click();
     expect(linkEl).not.toHaveFocus();
-    
+
     element.remove();
   });
-  
+
   describe('`items-per-page`', function () {
     beforeEach(function() {
       $rootScope.perpage = 5;
-      element = $compile('<pagination total-items="total" items-per-page="perpage" ng-model="currentPage"></pagination>')($rootScope);
+      element = $compile('<pagination total-items="total" items-per-page="perpage" ng-models="currentPage"></pagination>')($rootScope);
       $rootScope.$digest();
     });
 
@@ -212,7 +212,7 @@ describe('pagination directive', function () {
   describe('executes  `ng-change` expression', function () {
     beforeEach(function() {
       $rootScope.selectPageHandler = jasmine.createSpy('selectPageHandler');
-      element = $compile('<pagination total-items="total" ng-model="currentPage" ng-change="selectPageHandler()"></pagination>')($rootScope);
+      element = $compile('<pagination total-items="total" ng-models="currentPage" ng-change="selectPageHandler()"></pagination>')($rootScope);
       $rootScope.$digest();
     });
 
@@ -242,7 +242,7 @@ describe('pagination directive', function () {
       $rootScope.total = 98; // 10 pages
       $rootScope.currentPage = 3;
       $rootScope.maxSize = 5;
-      element = $compile('<pagination total-items="total" ng-model="currentPage" max-size="maxSize"></pagination>')($rootScope);
+      element = $compile('<pagination total-items="total" ng-models="currentPage" max-size="maxSize"></pagination>')($rootScope);
       $rootScope.$digest();
     });
 
@@ -303,17 +303,17 @@ describe('pagination directive', function () {
       expect(getPaginationEl(0).text()).toBe('Previous');
       expect(getPaginationEl(-1).text()).toBe('Next');
     });
-    
+
     it('should blur page link when visible range changes', function () {
       $document.find('body').append(element);
       var linkEl = getPaginationLinkEl(element, 4);
-      
+
       linkEl.focus();
       expect(linkEl).toHaveFocus();
-      
+
       linkEl.click();
       expect(linkEl).not.toHaveFocus();
-      
+
       element.remove();
     });
   });
@@ -324,7 +324,7 @@ describe('pagination directive', function () {
       $rootScope.currentPage = 7;
       $rootScope.maxSize = 5;
       $rootScope.rotate = false;
-      element = $compile('<pagination total-items="total" ng-model="currentPage" max-size="maxSize" rotate="rotate"></pagination>')($rootScope);
+      element = $compile('<pagination total-items="total" ng-models="currentPage" max-size="maxSize" rotate="rotate"></pagination>')($rootScope);
       $rootScope.$digest();
     });
 
@@ -383,7 +383,7 @@ describe('pagination directive', function () {
 
   describe('pagination directive with `boundary-links`', function () {
     beforeEach(function() {
-      element = $compile('<pagination boundary-links="true" total-items="total" ng-model="currentPage"></pagination>')($rootScope);
+      element = $compile('<pagination boundary-links="true" total-items="total" ng-models="currentPage"></pagination>')($rootScope);
       $rootScope.$digest();
     });
 
@@ -438,7 +438,7 @@ describe('pagination directive', function () {
     });
 
     it('changes "first" & "last" text from attributes', function() {
-      element = $compile('<pagination boundary-links="true" first-text="<<<" last-text=">>>" total-items="total" ng-model="currentPage"></pagination>')($rootScope);
+      element = $compile('<pagination boundary-links="true" first-text="<<<" last-text=">>>" total-items="total" ng-models="currentPage"></pagination>')($rootScope);
       $rootScope.$digest();
 
       expect(getPaginationEl(0).text()).toBe('<<<');
@@ -446,7 +446,7 @@ describe('pagination directive', function () {
     });
 
     it('changes "previous" & "next" text from attributes', function() {
-      element = $compile('<pagination boundary-links="true" previous-text="<<" next-text=">>" total-items="total" ng-model="currentPage"></pagination>')($rootScope);
+      element = $compile('<pagination boundary-links="true" previous-text="<<" next-text=">>" total-items="total" ng-models="currentPage"></pagination>')($rootScope);
       $rootScope.$digest();
 
       expect(getPaginationEl(1).text()).toBe('<<');
@@ -456,7 +456,7 @@ describe('pagination directive', function () {
     it('changes "first" & "last" text from interpolated attributes', function() {
       $rootScope.myfirstText = '<<<';
       $rootScope.mylastText = '>>>';
-      element = $compile('<pagination boundary-links="true" first-text="{{myfirstText}}" last-text="{{mylastText}}" total-items="total" ng-model="currentPage"></pagination>')($rootScope);
+      element = $compile('<pagination boundary-links="true" first-text="{{myfirstText}}" last-text="{{mylastText}}" total-items="total" ng-models="currentPage"></pagination>')($rootScope);
       $rootScope.$digest();
 
       expect(getPaginationEl(0).text()).toBe('<<<');
@@ -466,43 +466,43 @@ describe('pagination directive', function () {
     it('changes "previous" & "next" text from interpolated attributes', function() {
       $rootScope.previousText = '<<';
       $rootScope.nextText = '>>';
-      element = $compile('<pagination boundary-links="true" previous-text="{{previousText}}" next-text="{{nextText}}" total-items="total" ng-model="currentPage"></pagination>')($rootScope);
+      element = $compile('<pagination boundary-links="true" previous-text="{{previousText}}" next-text="{{nextText}}" total-items="total" ng-models="currentPage"></pagination>')($rootScope);
       $rootScope.$digest();
 
       expect(getPaginationEl(1).text()).toBe('<<');
       expect(getPaginationEl(-2).text()).toBe('>>');
     });
-    
+
     it('should blur the "first" link after it has been clicked', function () {
       $document.find('body').append(element);
       var linkEl = getPaginationLinkEl(element, 0);
-      
+
       linkEl.focus();
       expect(linkEl).toHaveFocus();
-      
+
       linkEl.click();
       expect(linkEl).not.toHaveFocus();
-      
+
       element.remove();
     });
-    
+
     it('should blur the "last" link after it has been clicked', function () {
       $document.find('body').append(element);
       var linkEl = getPaginationLinkEl(element, -1);
-      
+
       linkEl.focus();
       expect(linkEl).toHaveFocus();
-      
+
       linkEl.click();
       expect(linkEl).not.toHaveFocus();
-      
+
       element.remove();
     });
   });
 
   describe('pagination directive with just number links', function () {
     beforeEach(function() {
-      element = $compile('<pagination direction-links="false" total-items="total" ng-model="currentPage"></pagination>')($rootScope);
+      element = $compile('<pagination direction-links="false" total-items="total" ng-models="currentPage"></pagination>')($rootScope);
       $rootScope.$digest();
     });
 
@@ -554,7 +554,7 @@ describe('pagination directive', function () {
   describe('with just boundary & number links', function () {
     beforeEach(function() {
       $rootScope.directions = false;
-      element = $compile('<pagination boundary-links="true" direction-links="directions" total-items="total" ng-model="currentPage"></pagination>')($rootScope);
+      element = $compile('<pagination boundary-links="true" direction-links="directions" total-items="total" ng-models="currentPage"></pagination>')($rootScope);
       $rootScope.$digest();
     });
 
@@ -586,7 +586,7 @@ describe('pagination directive', function () {
   describe('`num-pages`', function () {
     beforeEach(function() {
       $rootScope.numpg = null;
-      element = $compile('<pagination total-items="total" ng-model="currentPage" num-pages="numpg"></pagination>')($rootScope);
+      element = $compile('<pagination total-items="total" ng-models="currentPage" num-pages="numpg"></pagination>')($rootScope);
       $rootScope.$digest();
     });
 
@@ -629,7 +629,7 @@ describe('pagination directive', function () {
       paginationConfig.previousText = 'PR';
       paginationConfig.nextText = 'NE';
       paginationConfig.lastText = 'LA';
-      element = $compile('<pagination total-items="total" ng-model="currentPage"></pagination>')($rootScope);
+      element = $compile('<pagination total-items="total" ng-models="currentPage"></pagination>')($rootScope);
       $rootScope.$digest();
 
       expect(getPaginationEl(0).text()).toBe('FI');
@@ -640,15 +640,15 @@ describe('pagination directive', function () {
 
     it('contains number of pages + 2 li elements', function() {
       paginationConfig.itemsPerPage = 5;
-      element = $compile('<pagination total-items="total" ng-model="currentPage"></pagination>')($rootScope);
+      element = $compile('<pagination total-items="total" ng-models="currentPage"></pagination>')($rootScope);
       $rootScope.$digest();
 
       expect(getPaginationBarSize()).toBe(12);
     });
 
-    it('should take maxSize defaults into account', function () {
+    it('should take maxSize defaults into users', function () {
       paginationConfig.maxSize = 2;
-      element = $compile('<pagination total-items="total" ng-model="currentPage"></pagination>')($rootScope);
+      element = $compile('<pagination total-items="total" ng-models="currentPage"></pagination>')($rootScope);
       $rootScope.$digest();
 
       expect(getPaginationBarSize()).toBe(4);
@@ -657,7 +657,7 @@ describe('pagination directive', function () {
 
   describe('override configuration from attributes', function () {
     beforeEach(function() {
-      element = $compile('<pagination boundary-links="true" first-text="<<" previous-text="<" next-text=">" last-text=">>" total-items="total" ng-model="currentPage"></pagination>')($rootScope);
+      element = $compile('<pagination boundary-links="true" first-text="<<" previous-text="<" next-text=">" last-text=">>" total-items="total" ng-models="currentPage"></pagination>')($rootScope);
       $rootScope.$digest();
     });
 

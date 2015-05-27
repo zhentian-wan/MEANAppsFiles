@@ -687,7 +687,7 @@ describe('tabs', function() {
     var elm;
     it('should render correct amount of options', inject(function($compile, $rootScope) {
       var scope = $rootScope.$new();
-      elm = $compile('<tabset><tab><select ng-model="foo" ng-options="i for i in [1,2,3]"></tab>')(scope);
+      elm = $compile('<tabset><tab><select ng-models="foo" ng-options="i for i in [1,2,3]"></tab>')(scope);
       scope.$apply();
 
       var select = elm.find('select');

@@ -26,6 +26,7 @@ function loginService($http, $q, IdentityFactory, UserResource, NOT_AUTHORIZED){
                         //extend user object by adding user info
                         angular.extend(user, response.user);
                         IdentityFactory.currentUser = user;
+                        console.log(IdentityFactory.currentUser);
                         resolve(true);
                     }else{
                         resolve(false);
@@ -92,6 +93,6 @@ function loginService($http, $q, IdentityFactory, UserResource, NOT_AUTHORIZED){
     return service;
 }
 
-angular.module('app')
+angular.module('app.models.user-models')
 
     .service('loginService', loginService);

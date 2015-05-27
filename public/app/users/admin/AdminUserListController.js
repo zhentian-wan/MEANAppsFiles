@@ -24,6 +24,30 @@ function usrListController(UserResource, AdminService, ToastFactory) {
     }
 }
 
-angular.module('app')
+angular.module('app.user.admin', [
+    'app.models.user.admin-models'
+])
+
+    .config(function($stateProvider) {
+
+        var userRoleCheck = {
+            admin: {
+                auth: function(loginService) {
+                    return loginService.authorizeCurrentUserForRoute('admin');
+                }
+            }
+        };
+
+        $stateProvider.state('app.admin', {
+            url: '/admin/users',
+            views: {
+                'main@': {
+                    templateUrl: '/partials/users/admin/user_list',
+                    controller: 'usrListController',
+                    resolve: userRoleCheck.admin
+                }
+            }
+        })
+    })
 
     .controller('usrListController', usrListController);

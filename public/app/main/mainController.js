@@ -7,5 +7,20 @@ function MainController(CourseCachedService) {
     vm.courses = CourseCachedService.query();
 }
 
-angular.module('app')
+angular.module('app.main', [
+    'app.main.course'
+])
+
+    .config(function($stateProvider) {
+        $stateProvider.state('app.main', {
+            url: '/',
+            views: {
+                'main@': {
+                    templateUrl: '/partials/main/main',
+                    controller: 'MainController'
+                }
+            }
+        })
+    })
+
     .controller('MainController', MainController);
