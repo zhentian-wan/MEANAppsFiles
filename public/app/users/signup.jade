@@ -2,28 +2,12 @@
    Created by Answer1215 on 5/15/2015.
 
 .container(ng-controller="SignupController as signupCtrl")
-   .well
-      form.form-horizontal(name="signupForm")
+   .well.well-sm.clearfix.text-capitalize
+      form(name="signupCtrl.signupForm")
          legend New User Information
-         .form-group
-            label.col-md-2.control-label(for="username") Username
-            .col-md-10
-               input.form-control(name="username", type="text", placeholder="Username" ng-model="signupCtrl.username" required)
-         .form-group
-            label.col-md-2.control-label(for="password") Password
-            .col-md-10
-               input.form-control(name="password", type="password", placeholder="password" ng-model="signupCtrl.password" required)
-         .form-group
-            label.col-md-2.control-label(for="fname") First Name
-            .col-md-10
-               input.form-control(name="fname", type="text", placeholder="First Name" ng-model="signupCtrl.fname" required)
-         .form-group
-            label.col-md-2.control-label(for="lname") Last Name
-            .col-md-10
-               input.form-control(name="lname", type="text", placeholder="Last Name" ng-model="signupCtrl.lname" required)
-         .form-group
-            .col-md-10.col-lg-offset-2
-               .pull-right
-                  button.btn.btn-info(ng-click="signupCtrl.signup()" ng-disable="signupForm.$invalid") Sign Up
-                  | &nbsp;
-                  a.btn.btn-default(href="/") Cancel
+         formly-form(model="signupCtrl.model", fields="signupCtrl.fields")
+            .pull-right
+               button.btn.btn-info(ng-click="signupCtrl.signup()" ng-disabled="signupCtrl.signupForm.$invalid") Sign Up
+               | &nbsp;
+               a.btn.btn-default(href="/") Cancel
+

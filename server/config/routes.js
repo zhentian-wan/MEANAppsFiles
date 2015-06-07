@@ -1,5 +1,5 @@
 var usersBlock = require('../routes/Users'),
-    coursesBlock = require('../routes/Courses'),
+    skillsBlock = require('../routes/Skills'),
     auth = require('./auth');
 
 module.exports = function(app) {
@@ -10,9 +10,9 @@ module.exports = function(app) {
     app.use('/api/users', usersBlock);
 
     /*
-     * Course route
+     * Skill route
      * */
-    app.use('/api/courses', coursesBlock);
+    app.use('/api/skills', skillsBlock);
 
 
     //Set route for partials

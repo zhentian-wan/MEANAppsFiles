@@ -1,0 +1,10 @@
+//
+   Created by Answer1215 on 6/7/2015.
+
+.panel.panel-primary
+   .panel-heading.text-center Learning skills
+   .panel-body
+      .row(ng-repeat="skill in main.skills | filter:{learning: true} | orderBy: 'published' :true | limitTo: 10")
+         .col-md-3 {{::skill.published | date: 'MM/yyyy'}}
+         .col-md-9
+            a(ui-sref="app.skills.skill-detail({id: skill._id})") {{skill.title}}

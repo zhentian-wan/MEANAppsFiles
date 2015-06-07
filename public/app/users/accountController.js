@@ -34,7 +34,7 @@ function AccountController(loginService, ToastFactory, IdentityFactory, $locatio
 
 angular.module('app.user', [
     'app.models.user-models',
-    'app.user.admin'
+    'app.admin'
 ])
 
     .config(function($stateProvider) {

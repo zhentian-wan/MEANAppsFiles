@@ -1,14 +1,14 @@
 /**
  * Created by Answer1215 on 5/11/2015.
  */
-function MainController(CourseCachedService) {
+function MainController(SkillCachedService) {
     var vm = this;
 
-    vm.courses = CourseCachedService.query();
+    vm.skills = SkillCachedService.query();
 }
 
 angular.module('app.main', [
-    'app.main.course'
+    'app.main.skill'
 ])
 
     .config(function($stateProvider) {

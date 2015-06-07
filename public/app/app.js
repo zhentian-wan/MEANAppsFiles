@@ -9,13 +9,17 @@ function AppController($rootScope, NOT_AUTHORIZED, $location) {
 
 angular.module('app', [
     'ngResource',
-    'ngRoute',
     'ngAnimate',
+    'formly',
+    'formlyBootstrap',
     'ui.router',
     'app.main',
     'app.user'])
 
-    .config(function($stateProvider, $urlRouterProvider) {
+    .config(function($compileProvider, $httpProvider, $stateProvider, $urlRouterProvider) {
+
+        $httpProvider.useApplyAsync(true);
+        $compileProvider.debugInfoEnabled(false);
 
         $stateProvider.state('app', {
             url: '',
