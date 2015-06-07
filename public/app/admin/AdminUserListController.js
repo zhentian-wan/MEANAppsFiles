@@ -37,7 +37,7 @@ angular.module('app.admin', [
             url: '/admin/users',
             views: {
                 'main@': {
-                    templateUrl: '/partials/users/admin/user_list',
+                    templateUrl: '/partials/admin/user_list',
                     controller: 'usrListController',
                     resolve: userRoleCheck.admin
                 }
