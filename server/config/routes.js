@@ -15,6 +15,23 @@ module.exports = function(app, config) {
      * */
     app.use('/api/skills', skillsBlock);
 
+
+    app.get('/api/lang', function(req, res) {
+        // Check endpoint called with appropriate param.:
+        if(!req.query.lang) {
+            res.status(500).send();
+            return;
+        }
+
+        try {
+            var lang = require('../i18n/' + req.query.lang);
+            res.send(lang); // `lang ` contains parsed JSON
+        } catch(err) {
+            res.status(404).send();
+        }
+    });
+
+
     //Set route for partials
     //When request comes for main partials, it will look for server/views/partials/mian
     app.get('/partials/*', function(req, res) {

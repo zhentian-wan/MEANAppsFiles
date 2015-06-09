@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Created by Answer1215 on 5/12/2015.
  */
 function IdentityFactory($window, UserResource) {

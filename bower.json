@@ -20,6 +20,7 @@
     "api-check": "~7.2.4",
     "angular-formly": "~6.10.1",
     "angular-formly-templates-bootstrap": "~4.3.1",
-    "d3": "~3.5.5"
+    "d3": "~3.5.5",
+    "angular-cookies": "~1.4.0"
   }
 }

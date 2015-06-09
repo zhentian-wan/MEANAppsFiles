@@ -1,7 +1,7 @@
-//
+﻿//
    Created by Answer1215 on 5/19/2015.
 .container(ng-controller="SkillDetailController as skillDetailCtrl")
-   h1 Skill Detail
+   h1 {{'body.skills.skillDetail' | translate}}
    .row
       .col-md-6.col-sm-12
          h3(ng-show="skillDetailCtrl.skill.mastered || skillDetailCtrl.skill.know || skillDetailCtrl.skill.learning") {{::skillDetailCtrl.skill.title}}

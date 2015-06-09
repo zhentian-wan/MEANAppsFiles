@@ -1,8 +1,8 @@
-/**
+﻿/**
  * Created by Answer1215 on 5/28/2015.
  */
 
-function SignupFormFactory() {
+function SignupFormFactory($translate) {
     var factory = {};
 
     factory.fields = [
@@ -10,9 +10,9 @@ function SignupFormFactory() {
             key: 'username',
             type: 'input',
             templateOptions: {
-                label: 'Username: ',
+                label: $translate.instant('form.userName'),
                 required: true,
-                placeholder: 'Enter username'
+                placeholder: $translate.instant('form.enterUserName')
             }
         },
         {
@@ -20,9 +20,9 @@ function SignupFormFactory() {
             type: 'input',
             templateOptions: {
                 type: 'email',
-                label: 'Email address: ',
+                label: $translate.instant('form.email'),
                 required: true,
-                placeholder: 'Enter email'
+                placeholder: $translate.instant('form.enterEmail')
             }
         },
         {
@@ -30,10 +30,10 @@ function SignupFormFactory() {
             type: 'input',
             templateOptions: {
                 type: 'password',
-                label: 'Password: ',
+                label: $translate.instant('form.password'),
                 minlength: 4,
                 required: true,
-                placeholder: 'Enter password'
+                placeholder: $translate.instant('form.enterPassword')
             }
         },
         {
@@ -41,10 +41,10 @@ function SignupFormFactory() {
             type: 'input',
             templateOptions: {
                 type: 'password',
-                label: 'Repeat password: ',
+                label: $translate.instant('form.repeatPassword'),
                 minlength: 4,
                 required: true,
-                placeholder: 'Enter password again'
+                placeholder: $translate.instant('form.enterRepeatPassword')
             },
             validators: {
                 equals: function($viewValue, $modelValue, scope) {
@@ -62,18 +62,18 @@ function SignupFormFactory() {
             key: 'fname',
             type: 'input',
             templateOptions: {
-                label: 'First name: ',
+                label: $translate.instant('form.firstName'),
                 required: true,
-                placeholder: 'Enter first name'
+                placeholder: $translate.instant('form.enterFirstName')
             }
         },
         {
             key: 'lname',
             type: 'input',
             templateOptions: {
-                label: 'Last name: ',
+                label: $translate.instant('form.lastName'),
                 required: true,
-                placeholder: 'Enter last name'
+                placeholder: $translate.instant('form.enterLastName')
             }
         }
     ];

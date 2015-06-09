@@ -5,14 +5,13 @@ block main-content
       .navbar.navbar-inverse.navbar-fixed-top
          .container
             .navbar-header
-               a.navbar-brand(ui-sref="app.main()") Zhentian's Home
-                  h6 - Skills stack
+               a.navbar-brand(ui-sref="app.main()") {{'header.zhentianHome' | translate}}
+                  h6 - {{'header.skillsStack' | translate}}
              .navbar-collapse.collapse
                 ul.nav.navbar-nav
                    li
-                     a(href="/") language |
-                   li
-                     a(ui-sref="app.skills()") Skills
+                     a(ui-sref="app.skills()") {{'header.skills' | translate}}
+                div.locale-selector
                 div(ng-include="'/partials/users/navbar-login'")
       div(ui-view="main")
 

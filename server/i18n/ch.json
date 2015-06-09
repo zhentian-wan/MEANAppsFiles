@@ -1,36 +1,56 @@
-{
-  // Header bar
-  "ZHENTIAN_HOME": "臻天Home",
-  "SKILLS_STACK": "专业技能",
-  "SKILLS": "专业技能", 
-  "SIGNIN": "登入",
-  "SIGNUP": "注册",
-  "USER_ADMIN": "用户管理", 
-  "USER_PROFILE": "用户资料",
-  "SIGNOUT": "切换用户",
-  //Sign in
-  "USERNAME": "用户名:",
-  "ENTER_USERNAME": "请输入用户",
-  "PASSWORD": "密码：",
-  "ENTER_PASSWORD": "请输入密码",
-  //Main bg
-  "WEB_DEVELOPER": "我，作为一个网页工程师", 
-  "AAA": "决定你未来高度的是你的态度，而并非你的天资",
-  //SKILLS
-  "MASTER_SKILLS": "熟练的技能",
-  "KNOWING_SKILLS": "了解的技能",
-  "LEARNING_SKILLS": "正学习的技能",
-  //Sign in form
-  "EMAIL": "邮箱: ",
-  "ENTER_EMAIL": "请输入你的邮箱",
-  "REPEAT_PASSWORD": "再次确认密码",
-  "ENTER_REPEAT_PASSWORD": "请再次确认密码",
-  "FIRSTNAME": "名",
-  "ENTER_FIRSTNAME": "请输入您的名字",
-  "ENTER_LASTNAME": "请输入你的姓氏",
-  //System info
-  "LOGIN_SUCCESS": "成功登入!",
-  "LOGIN_FAIL": "无法登入!",
-  "LOGOUT_SUCCESS": "退出成功!",
-  "SELECT_LANGUAGES": "选择语言"
+﻿{
+  "languageNames": {
+    "en": "English",
+    "ch": "Chinese"
+  },
+  "header": {
+    "zhentianHome": "臻天Zone",
+    "skillsStack": "专业技能",
+    "skills": "专业技能",
+    "signIn": "登入",
+    "signUp": "注册",
+    "userAdmin": "用户管理",
+    "userProfile": "用户资料",
+    "signOut": "切换用户"
+  },
+  "form": {
+    "email": "邮箱: ",
+    "enterEmail": "请输入你的邮箱",
+    "repeatPassword": "再次确认密码",
+    "enterRepeatPassword": "请再次确认密码",
+    "firstName": "名",
+    "enterFirstName": "请输入您的名字",
+    "lastName": "姓",
+    "enterLastName": "请输入你的姓氏",
+    "userName": "用户名",
+    "enterUserName": "请输入用户",
+    "password": "密码",
+    "enterPassword": "请输入密码",
+    "title": "标题",
+    "sinceDate": "开始时间",
+    "sortByName": "按标题排序",
+    "sortBySinceDate": "按开始时间排序",
+    "delete": "删除",
+    "update": "更新",
+    "update": "更新",
+    "newUserInfo": "注册新用户"
+  },
+  "body": {
+    "main": {
+      "webDeveloper": "我，作为一个网页工程师",
+      "AAA": "决定你未来高度的是你的态度，而并非你的天资"
+    },
+    "skills": {
+      "masterSkills": "熟练的技能",
+      "knowingSkills": "了解的技能",
+      "learningSkills": "正学习的技能",
+      "skillDetail": "详细技能"
+    }
+  },
+  "info": {
+    "loginSuccess": "成功登入!",
+    "loginFail": "无法登入!",
+    "logoutSuccess": "退出成功!",
+    "selectLanguage": "选择语言: "
+  }
 }

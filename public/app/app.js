@@ -1,4 +1,4 @@
-function AppController($rootScope, NOT_AUTHORIZED, $location ) {
+﻿function AppController($rootScope, NOT_AUTHORIZED, $location ) {
 
     $rootScope.$on('$routeChangeError', function(event, current, previous, rejction) {
         if(rejction === NOT_AUTHORIZED) {
@@ -21,6 +21,18 @@ function AppController($rootScope, NOT_AUTHORIZED, $location ) {
     });
 }
 
+
+function languageController($translate) {
+    // Get active locale even if not loaded yet:
+    var vm = this;
+    vm.locale = $translate.proposedLanguage() || "en";
+
+    vm.setLocale = function() {
+        $translate.use(vm.locale);
+        console.log(vm.locale);
+    };
+}
+
 angular.module('app', [
     'ngResource',
     'ngAnimate',
@@ -28,13 +40,19 @@ angular.module('app', [
     'formlyBootstrap',
     'ui.router',
     'ngSanitize',
+    'ngCookies',
+    'pascalprecht.translate',
     'app.main',
     'app.user'])
 
-    .config(function($compileProvider, $httpProvider, $stateProvider, $urlRouterProvider) {
+    .config(function($compileProvider, $httpProvider, $stateProvider, $urlRouterProvider, $translateProvider) {
 
         $httpProvider.useApplyAsync(true);
         $compileProvider.debugInfoEnabled(false);
+        $translateProvider.useCookieStorage();
+        $translateProvider.useUrlLoader('/api/lang');
+        $translateProvider.preferredLanguage('en');
+        //$translateProvider.useSanitizeValueStrategy('sanitize');
 
         $stateProvider.state('app', {
             url: '',
@@ -47,5 +65,18 @@ angular.module('app', [
     .value('NOT_AUTHORIZED', 'Not authorized')
 
     .controller('AppController', AppController)
+
+    .controller('languageController', languageController)
+
+    .directive('localeSelector', function($translate) {
+        return {
+            restrict: 'C',
+            replace: true,
+            bindToController: true,
+            controller: 'languageController',
+            controllerAs: "langCtrl",
+            templateUrl: 'partials/main/languages'
+        };
+    })
 ;
 

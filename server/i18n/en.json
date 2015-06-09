@@ -1,37 +1,56 @@
-{
-  // Header bar
-  "zhentianHome": "Zhentian's Home",
-  "skillsStack": "Skills Stack",
-  "SKILLS": "Skills",
-  "SIGNIN": "Sign in",
-  "SIGNUP": "Sign up",
-  "USER_ADMIN": "User admin",
-  "USER_PROFILE": "User profile",
-  "SIGNOUT": "Sign out",
-  //Sign in
-  "USERNAME": "username",
-  "ENTER_USERNAME": "Enter username",
-  "PASSWORD": "Password",
-  "ENTER_PASSWORD": "Enter password",
-  //Main bg
-  "WEB_DEVELOPER": "Me as a web developer",
-  "AAA": "Your attitude, not your aptitude, will determine your altitude",
-  //SKILLS
-  "MASTER_SKILLS": "Master skills",
-  "KNOWING_SKILLS": "Knowing skills",
-  "LEARNING_SKILLS": "Learning skills",
-  //Sign in form
-  "EMAIL": "Email address: ",
-  "ENTER_EMAIL": "Email address: ",
-  "REPEAT_PASSWORD": "Repeat password",
-  "ENTER_REPEAT_PASSWORD": "Please Repeat password",
-  "FIRSTNAME": "First name",
-  "ENTER_FIRSTNAME": "Enter your First name",
-  "LASTNAME": "Last name",
-  "ENTER_LASTNAME": "Enter your last name",
-  //System info
-  "LOGIN_SUCCESS": "Successfully logged in!",
-  "LOGIN_FAIL": "Cannot login!",
-  "LOGOUT_SUCCESS": "Successfully logout!",
-  "SELECT_LANGUAGES": "Select languages: "
+﻿{
+  "languageNames": {
+    "en": "English",
+    "ch": "Chinese"
+  },
+  "header": {
+    "zhentianHome": "Zhentian's Home",
+    "skillsStack": "Skills Stack",
+    "skills": "Skills",
+    "signIn": "Sign in",
+    "signUp": "Sign up",
+    "userAdmin": "User admin",
+    "userProfile": "User profile",
+    "signOut": "Sign out"
+  },
+  "form": {
+    "email": "Email address: ",
+    "enterEmail": "Email address: ",
+    "repeatPassword": "Repeat password",
+    "enterRepeatPassword": "Please Repeat password",
+    "firstName": "First name",
+    "enterFirstName": "Enter your First name",
+    "lastName": "Last name",
+    "enterLastName": "Enter your last name",
+    "userName": "Username",
+    "enterUserName": "Enter username",
+    "password": "Password",
+    "enterPassword": "Enter password",
+    "title": "Title",
+    "sinceDate": "Since Date",
+    "sortByName": "Sort by Name",
+    "sortBySinceDate": "Sort by since date",
+    "delete": "Delete",
+    "update": "Update",
+    "cancel": "Cancel",
+    "newUserInfo":"New User Information"
+  },
+  "body": {
+    "main": {
+      "webDeveloper": "Me as a web developer",
+      "AAA": "Your attitude, not your aptitude, will determine your altitude"
+    },
+    "skills": {
+      "masterSkills": "Master skills",
+      "knowingSkills": "Knowing skills",
+      "learningSkills": "Learning skills",
+      "skillDetail": "Skill Detail"
+    }
+  },
+  "info": {
+    "loginSuccess": "Successfully logged in!",
+    "loginFail": "Cannot login!",
+    "logoutSuccess": "Successfully logout!",
+    "selectLanguage": "Select languages: "
+  }
 }

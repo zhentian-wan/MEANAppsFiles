@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Created by Answer1215 on 5/11/2015.
  */
 function MainController(SkillCachedService) {

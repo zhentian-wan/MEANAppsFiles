@@ -1,13 +1,13 @@
-//
+﻿//
    Created by Answer1215 on 5/15/2015.
 
 .container(ng-controller="SignupController as signupCtrl")
    .well.well-sm.clearfix.text-capitalize
       form(name="signupCtrl.signupForm")
-         legend New User Information
+         legend {{'form.newUserInfo'| translate}}
          formly-form(model="signupCtrl.model", fields="signupCtrl.fields")
             .pull-right
-               button.btn.btn-info(ng-click="signupCtrl.signup()" ng-disabled="signupCtrl.signupForm.$invalid") Sign Up
+               button.btn.btn-info(ng-click="signupCtrl.signup()" ng-disabled="signupCtrl.signupForm.$invalid") {{'header.signUp'| translate}}
                | &nbsp;
-               a.btn.btn-default(href="/") Cancel
+               a.btn.btn-default(href="/") {{'form.cancel'| translate}}
 
