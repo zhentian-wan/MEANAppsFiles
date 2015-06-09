@@ -28,11 +28,11 @@ exports.createDefaultUsers = function() {
         if(_.size(collection) === 0) {
             var salt, hash;
             salt = encrypt.createSalt();
-            hash = encrypt.hashPwd(salt, 'john');
+            hash = encrypt.hashPwd(salt, 'wan');
             User.create({
-                firstName: 'john',
-                lastName: 'Linquist',
-                username: 'john',
+                firstName: 'zhentian',
+                lastName: 'wan',
+                username: 'wan',
                 salt: salt,
                 hash_pwd: hash,
                 role: 'admin'

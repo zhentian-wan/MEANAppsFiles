@@ -1,0 +1,37 @@
+{
+  // Header bar
+  "zhentianHome": "Zhentian's Home",
+  "skillsStack": "Skills Stack",
+  "SKILLS": "Skills",
+  "SIGNIN": "Sign in",
+  "SIGNUP": "Sign up",
+  "USER_ADMIN": "User admin",
+  "USER_PROFILE": "User profile",
+  "SIGNOUT": "Sign out",
+  //Sign in
+  "USERNAME": "username",
+  "ENTER_USERNAME": "Enter username",
+  "PASSWORD": "Password",
+  "ENTER_PASSWORD": "Enter password",
+  //Main bg
+  "WEB_DEVELOPER": "Me as a web developer",
+  "AAA": "Your attitude, not your aptitude, will determine your altitude",
+  //SKILLS
+  "MASTER_SKILLS": "Master skills",
+  "KNOWING_SKILLS": "Knowing skills",
+  "LEARNING_SKILLS": "Learning skills",
+  //Sign in form
+  "EMAIL": "Email address: ",
+  "ENTER_EMAIL": "Email address: ",
+  "REPEAT_PASSWORD": "Repeat password",
+  "ENTER_REPEAT_PASSWORD": "Please Repeat password",
+  "FIRSTNAME": "First name",
+  "ENTER_FIRSTNAME": "Enter your First name",
+  "LASTNAME": "Last name",
+  "ENTER_LASTNAME": "Enter your last name",
+  //System info
+  "LOGIN_SUCCESS": "Successfully logged in!",
+  "LOGIN_FAIL": "Cannot login!",
+  "LOGOUT_SUCCESS": "Successfully logout!",
+  "SELECT_LANGUAGES": "Select languages: "
+}

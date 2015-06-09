@@ -35,14 +35,14 @@ window['Rainbow'] = (function() {
         replacement_positions = {},
 
         /**
-         * an array of the language patterns specified for each language
+         * an array of the i18n patterns specified for each i18n
          *
          * @type {Object}
          */
         language_patterns = {},
 
         /**
-         * an array of languages and whether they should bypass the default patterns
+         * an array of i18n and whether they should bypass the default patterns
          *
          * @type {Object}
          */
@@ -59,7 +59,7 @@ window['Rainbow'] = (function() {
         CURRENT_LEVEL = 0,
 
         /**
-         * constant used to refer to the default language
+         * constant used to refer to the default i18n
          *
          * @type {number}
          */
@@ -136,22 +136,22 @@ window['Rainbow'] = (function() {
     }
 
     /**
-     * gets the language for this block of code
+     * gets the i18n for this block of code
      *
      * @param {Element} block
      * @returns {string|null}
      */
     function _getLanguageForBlock(block) {
 
-        // if this doesn't have a language but the parent does then use that
-        // this means if for example you have: <pre data-language="php">
+        // if this doesn't have a i18n but the parent does then use that
+        // this means if for example you have: <pre data-i18n="php">
         // with a bunch of <code> blocks inside then you do not have
-        // to specify the language for each block
-        var language = _attr(block, 'data-language') || _attr(block.parentNode, 'data-language');
+        // to specify the i18n for each block
+        var language = _attr(block, 'data-i18n') || _attr(block.parentNode, 'data-i18n');
 
-        // this adds support for specifying language via a css class
+        // this adds support for specifying i18n via a css class
         // you can use the Google Code Prettify style: <pre class="lang-php">
-        // or the HTML5 style: <pre><code class="language-php">
+        // or the HTML5 style: <pre><code class="i18n-php">
         if (!language) {
             var pattern = /\blang(?:uage)?-(\w+)/,
                 match = block.className.match(pattern) || block.parentNode.className.match(pattern);
@@ -428,7 +428,7 @@ window['Rainbow'] = (function() {
                         processNextGroup();
                     };
 
-                // if this is a sublanguage go and process the block using that language
+                // if this is a sublanguage go and process the block using that i18n
                 if (language) {
                     return _highlightBlockForLanguage(block, language, function(code) {
                         _replaceAndContinue(block, code);
@@ -452,7 +452,7 @@ window['Rainbow'] = (function() {
     }
 
     /**
-     * should a language bypass the default patterns?
+     * should a i18n bypass the default patterns?
      *
      * if you call Rainbow.extend() and pass true as the third argument
      * it will bypass the defaults
@@ -463,7 +463,7 @@ window['Rainbow'] = (function() {
     }
 
     /**
-     * returns a list of regex patterns for this language
+     * returns a list of regex patterns for this i18n
      *
      * @param {string} language
      * @returns {Array}
@@ -594,7 +594,7 @@ window['Rainbow'] = (function() {
     }
 
     /**
-     * takes a string of code and highlights it according to the language specified
+     * takes a string of code and highlights it according to the i18n specified
      *
      * @param {string} code
      * @param {string} language
@@ -693,16 +693,16 @@ window['Rainbow'] = (function() {
     return {
 
         /**
-         * extends the language pattern matches
+         * extends the i18n pattern matches
          *
-         * @param {*} language     name of language
+         * @param {*} language     name of i18n
          * @param {*} patterns      array of patterns to add on
-         * @param {boolean|null} bypass      if true this will bypass the default language patterns
+         * @param {boolean|null} bypass      if true this will bypass the default i18n patterns
          */
         extend: function(language, patterns, bypass) {
 
             // if there is only one argument then we assume that we want to
-            // extend the default language rules
+            // extend the default i18n rules
             if (arguments.length == 1) {
                 patterns = language;
                 language = DEFAULT_LANGUAGE;
@@ -738,7 +738,7 @@ window['Rainbow'] = (function() {
         color: function() {
 
             // if you want to straight up highlight a string you can pass the string of code,
-            // the language, and a callback function
+            // the i18n, and a callback function
             if (typeof arguments[0] == 'string') {
                 return _highlightBlockForLanguage(arguments[0], arguments[1], arguments[2]);
             }

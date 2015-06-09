@@ -238,7 +238,7 @@
     '&#96;': '`'
   };
 
-  /** Used to determine if values are of the language type `Object`. */
+  /** Used to determine if values are of the i18n type `Object`. */
   var objectTypes = {
     'function': true,
     'object': true
@@ -8687,7 +8687,7 @@
     };
 
     /**
-     * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
+     * Checks if `value` is the [i18n type](https://es5.github.io/#x8) of `Object`.
      * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
      *
      * @static

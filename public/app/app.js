@@ -1,6 +1,4 @@
-function AppController($rootScope, NOT_AUTHORIZED, $location) {
-
-    var vm = this;
+function AppController($rootScope, NOT_AUTHORIZED, $location ) {
 
     $rootScope.$on('$routeChangeError', function(event, current, previous, rejction) {
         if(rejction === NOT_AUTHORIZED) {
@@ -9,24 +7,19 @@ function AppController($rootScope, NOT_AUTHORIZED, $location) {
     });
 
     $rootScope.$on('$viewContentLoaded', function() {
-
-        d3.select('.jumbotron>h1')
-            .style('opacity', 0)
-            .transition()
-            .duration(900)
-            .style('opacity', 1);
-
-        d3.select('.jumbotron>blockquote')
-            .style('opacity', 0)
-            .style('margin', '0 200px 21px')
-            .transition()
-            .duration(900)
-            .delay(400)
-            .style('opacity', 1)
-            .style('margin', '0 0px 21px');
+        var tl = new TimelineLite();
+        tl.fromTo($('.jumbotron>h1'), 0.5, {marginLeft: '300px', alpha: 0}, {
+            marginLeft: 0,
+            alpha: 1,
+            ease: Ease.easeInOut
+        })
+            .fromTo($('.jumbotron>blockquote'), 0.5, {marginLeft: '200px', alpha: 0}, {
+                marginLeft: 0,
+                alpha: 1,
+                ease: Ease.easeInOut
+            });
     });
 }
-
 
 angular.module('app', [
     'ngResource',
@@ -34,6 +27,7 @@ angular.module('app', [
     'formly',
     'formlyBootstrap',
     'ui.router',
+    'ngSanitize',
     'app.main',
     'app.user'])
 
@@ -52,5 +46,6 @@ angular.module('app', [
 
     .value('NOT_AUTHORIZED', 'Not authorized')
 
-    .controller('AppController', AppController);
+    .controller('AppController', AppController)
+;
 

@@ -10,6 +10,8 @@ block main-content
              .navbar-collapse.collapse
                 ul.nav.navbar-nav
                    li
+                     a(href="/") language |
+                   li
                      a(ui-sref="app.skills()") Skills
                 div(ng-include="'/partials/users/navbar-login'")
       div(ui-view="main")

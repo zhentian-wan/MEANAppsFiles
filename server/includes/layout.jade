@@ -1,15 +1,16 @@
 doctype
-html
+html(ng-app="app" ng-controller="AppController as appCtrl")
     head
-        title Zhentian Wan
+        title(i18n="{{appCtrl.words.zhentianHome}}")
         base(href="/")
+        meta(charset="UTF-8")
         link(href="/favicon.ico", rel="shortcut icon", type="image/x-icon")
         link(href="/css/bootstrap.css", rel="stylesheet")
         link(href="/vendor/toastr/toastr.min.css" rel='stylesheet')
         link(href="/css/site.css", rel="stylesheet")
         link(href="/css/animate.css", rel="stylesheet")
 
-    body(ng-app="app" ng-controller="AppController")
+    body
         include currentUser
         block main-content
         //include all the javascript files

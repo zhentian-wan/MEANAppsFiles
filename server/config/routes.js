@@ -1,8 +1,9 @@
 var usersBlock = require('../routes/Users'),
     skillsBlock = require('../routes/Skills'),
-    auth = require('./auth');
+    auth = require('./auth'),
+    fs = require("fs");
 
-module.exports = function(app) {
+module.exports = function(app, config) {
 
     /*
      * User route
@@ -13,7 +14,6 @@ module.exports = function(app) {
      * Skill route
      * */
     app.use('/api/skills', skillsBlock);
-
 
     //Set route for partials
     //When request comes for main partials, it will look for server/views/partials/mian
@@ -36,8 +36,11 @@ module.exports = function(app) {
 
     // All routes handled by this route, give client side to handle
     app.get('*', function(req, res) {
+        var langFile = config.rootPath + 'public/app/i18n/i18n.json',
+            wordsFile = config.rootPath + 'public/app/i18n/words.json';
         res.render('index', {
-            bootstrappedUser: req.user  //server will remember the current user
+            bootstrappedUser: req.user //server will remember the current user
         });
     });
 };
+

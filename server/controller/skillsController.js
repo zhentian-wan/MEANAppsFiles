@@ -4,6 +4,7 @@
 var Skill = require('mongoose').model('Skill');
 
 exports.getSkills = function(req, res) {
+
     Skill.find({}).exec(function(err, collection) {
         res.send(collection);
     });
