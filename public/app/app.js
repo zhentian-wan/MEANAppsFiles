@@ -1,4 +1,4 @@
-﻿function AppController($rootScope, NOT_AUTHORIZED, $location ) {
+function AppController($rootScope, NOT_AUTHORIZED, $location ) {
 
     $rootScope.$on('$routeChangeError', function(event, current, previous, rejction) {
         if(rejction === NOT_AUTHORIZED) {

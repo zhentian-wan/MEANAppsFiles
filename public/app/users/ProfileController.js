@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Created by Answer1215 on 5/17/2015.
  */
 function ProfileController(IdentityFactory, loginService, Toast) {

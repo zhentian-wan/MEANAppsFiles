@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Created by Answer1215 on 5/30/2015.
  */
 angular.module('filter', [])

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Created by Answer1215 on 5/15/2015.
  */
 function SignupController(loginService, Toast, $location, SignupFormFactory) {

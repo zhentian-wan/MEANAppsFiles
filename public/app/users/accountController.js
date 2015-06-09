@@ -1,4 +1,4 @@
-﻿function AccountController(loginService, ToastFactory, IdentityFactory, $location) {
+function AccountController(loginService, ToastFactory, IdentityFactory, $location) {
     var vm = this;
     vm.user = {};
 
