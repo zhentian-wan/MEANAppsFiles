@@ -49,10 +49,10 @@ angular.module('app', [
 
         $httpProvider.useApplyAsync(true);
         $compileProvider.debugInfoEnabled(false);
-      /* // $translateProvider.useCookieStorage();
+        $translateProvider.useCookieStorage();
         $translateProvider.useUrlLoader('/api/lang');
         $translateProvider.preferredLanguage('en');
-        //$translateProvider.useSanitizeValueStrategy('sanitize');*/
+        //$translateProvider.useSanitizeValueStrategy('sanitize');
 
         $stateProvider.state('app', {
             url: '',
