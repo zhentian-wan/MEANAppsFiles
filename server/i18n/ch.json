@@ -32,7 +32,7 @@
     "sortBySinceDate": "按开始时间排序",
     "delete": "删除",
     "update": "更新",
-    "update": "更新",
+    "cancel": "取消",
     "newUserInfo": "注册新用户"
   },
   "body": {
