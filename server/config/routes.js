@@ -18,10 +18,10 @@ module.exports = function(app, config) {
 
     app.get('/api/lang', function(req, res) {
         // Check endpoint called with appropriate param.:
-        if(!req.query.lang) {
+      /*  if(!req.query.lang) {
             res.status(500).send();
             return;
-        }
+        }*/
 
         try {
             var lang = require('../i18n/' + req.query.lang);
