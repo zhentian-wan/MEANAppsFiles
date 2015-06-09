@@ -1,7 +1,7 @@
 {
-  "name": "MultiVision",
-  "version": "0.1.2",
-  "description": "Extreme Tech Training",
+  "name": "ZhentianApp",
+  "version": "0.1.7",
+  "description": "MEAN app",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
