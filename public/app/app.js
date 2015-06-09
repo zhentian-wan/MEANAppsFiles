@@ -49,10 +49,10 @@ angular.module('app', [
 
         $httpProvider.useApplyAsync(true);
         $compileProvider.debugInfoEnabled(false);
-       // $translateProvider.useCookieStorage();
+      /* // $translateProvider.useCookieStorage();
         $translateProvider.useUrlLoader('/api/lang');
         $translateProvider.preferredLanguage('en');
-        //$translateProvider.useSanitizeValueStrategy('sanitize');
+        //$translateProvider.useSanitizeValueStrategy('sanitize');*/
 
         $stateProvider.state('app', {
             url: '',
@@ -68,7 +68,7 @@ angular.module('app', [
 
     .controller('languageController', languageController)
 
-    .directive('localeSelector', function($translate) {
+    /*.directive('localeSelector', function($translate) {
         return {
             restrict: 'C',
             replace: true,
@@ -77,6 +77,6 @@ angular.module('app', [
             controllerAs: "langCtrl",
             templateUrl: 'partials/main/languages'
         };
-    })
+    })*/
 ;
 
