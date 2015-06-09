@@ -15,7 +15,7 @@ module.exports = function(app, config) {
     app.use('/api/skills', skillsBlock);
 
 
-   /* app.get('/api/lang', function(req, res) {
+    app.get('/api/lang', function(req, res) {
         // Check endpoint called with appropriate param.:
         if(!req.query.lang) {
             res.status(500).send();
@@ -28,7 +28,7 @@ module.exports = function(app, config) {
         } catch(err) {
             res.status(404).send();
         }
-    });*/
+    });
 
 
     //Set route for partials

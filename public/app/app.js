@@ -68,7 +68,7 @@ angular.module('app', [
 
     .controller('languageController', languageController)
 
-    /*.directive('localeSelector', function($translate) {
+    .directive('localeSelector', function($translate) {
         return {
             restrict: 'C',
             replace: true,
@@ -77,6 +77,6 @@ angular.module('app', [
             controllerAs: "langCtrl",
             templateUrl: 'partials/main/languages'
         };
-    })*/
+    })
 ;
 
