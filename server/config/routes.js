@@ -1,7 +1,6 @@
 var usersBlock = require('../routes/Users'),
     skillsBlock = require('../routes/Skills'),
-    auth = require('./auth'),
-    fs = require("fs");
+    auth = require('./auth');
 
 module.exports = function(app, config) {
 
