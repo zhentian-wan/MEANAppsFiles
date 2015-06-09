@@ -1,0 +1,3 @@
+select(ng-change="setLocale()" ng-model="local")
+    option(value="en" ng-selected="local == 'en'") {{'languageNames.en' | translate}}
+    option(value="ch" ng-selected="local == 'ch'") {{ 'languageNames.es' | translate }}
