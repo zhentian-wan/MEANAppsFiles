@@ -30,7 +30,7 @@ angular.module('app.admin', [
                 auth: function(loginService) {
                     return loginService.authorizeCurrentUserForRoute('admin');
                 }
-            } 
+            }
         };
 
         $stateProvider.state('app.admin', {
