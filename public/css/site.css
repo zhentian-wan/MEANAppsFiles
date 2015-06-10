@@ -19,6 +19,9 @@ body {
   position: absolute;
   z-index: -1;
 }
+.label {
+  margin-left: 5px;
+}
 blockquote {
   border-left: 5px solid #18bc9c;
 }
