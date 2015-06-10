@@ -14,7 +14,8 @@ function SkillsController(SkillCachedService) {
 }
 
 angular.module('app.main.skill', [
-    'app.models.skill-models'
+    'app.models.skill-models',
+    'app.main.skill.category'
 ])
 
     .config(function($stateProvider) {

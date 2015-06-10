@@ -11,7 +11,8 @@
     "signUp": "注册",
     "userAdmin": "用户管理",
     "userProfile": "用户资料",
-    "signOut": "切换用户"
+    "signOut": "切换用户",
+    "experiences": "工作经验"
   },
   "form": {
     "email": "邮箱: ",
@@ -33,7 +34,8 @@
     "delete": "删除",
     "update": "更新",
     "cancel": "取消",
-    "newUserInfo": "注册新用户"
+    "newUserInfo": "注册新用户",
+    "saving": "保存..."
   },
   "body": {
     "main": {
@@ -45,7 +47,8 @@
       "knowingSkills": "了解的技能",
       "learningSkills": "正学习的技能",
       "skillDetail": "详细技能"
-    }
+    },
+    "skillCategory": "技能分类"
   },
   "info": {
     "loginSuccess": "成功登入!",

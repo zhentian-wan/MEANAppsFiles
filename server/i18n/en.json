@@ -11,7 +11,8 @@
     "signUp": "Sign up",
     "userAdmin": "User admin",
     "userProfile": "User profile",
-    "signOut": "Sign out"
+    "signOut": "Sign out",
+    "experiences": "Experiences"
   },
   "form": {
     "email": "Email address: ",
@@ -33,7 +34,8 @@
     "delete": "Delete",
     "update": "Update",
     "cancel": "Cancel",
-    "newUserInfo":"New User Information"
+    "newUserInfo":"New User Information",
+    "saving":"Saving..."
   },
   "body": {
     "main": {
@@ -45,7 +47,8 @@
       "knowingSkills": "Knowing skills",
       "learningSkills": "Learning skills",
       "skillDetail": "Skill Detail"
-    }
+    },
+    "skillCategory": "Skills Category"
   },
   "info": {
     "loginSuccess": "Successfully logged in!",

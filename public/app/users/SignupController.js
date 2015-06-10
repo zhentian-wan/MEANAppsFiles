@@ -8,6 +8,8 @@ function SignupController(loginService, Toast, $location, SignupFormFactory) {
     vm.model = {};
     vm.fields = SignupFormFactory.fields;
 
+    vm.isSubmitting = false;
+
     vm.signup = function() {
 
         vm.newUserData = {
@@ -19,12 +21,15 @@ function SignupController(loginService, Toast, $location, SignupFormFactory) {
         };
 
         if(vm.model.username && vm.model.password && vm.model.email && vm.model.lname && vm.model.fname) {
+            vm.isSubmitting = true;
             loginService.createNewUser(vm.newUserData).then(function() {
                 Toast.success('Your users has been created!');
                 $location.path('/');
             }, function(reason) {
                 Toast.error(reason);
-            })
+            }).finally(function() {
+                vm.isSubmitting = false;
+            });
         }
     }
 }

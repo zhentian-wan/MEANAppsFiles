@@ -32,6 +32,16 @@ blockquote {
 .navbar-header a.navbar-brand h6 {
   color: #ccc;
 }
+.category-nav {
+  overflow: hidden;
+  width: 100%;
+}
+.category-nav span {
+  float: left;
+}
+.category-nav .label {
+  margin-top: 5px;
+}
 .navbar-form .form-group {
   margin-left: 10px;
 }

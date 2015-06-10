@@ -7,7 +7,7 @@
          legend {{'form.newUserInfo'| translate}}
          formly-form(model="signupCtrl.model", fields="signupCtrl.fields")
             .pull-right
-               button.btn.btn-info(ng-click="signupCtrl.signup()" ng-disabled="signupCtrl.signupForm.$invalid") {{'header.signUp'| translate}}
+               button.btn.btn-info(ng-click="signupCtrl.signup()" ng-disabled="signupCtrl.signupForm.$invalid" ) {{signupCtrl.isSubmitting == true ? 'form.saving': 'header.signUp'| translate}}
                | &nbsp;
                a.btn.btn-default(href="/") {{'form.cancel'| translate}}
 
