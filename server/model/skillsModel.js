@@ -55,7 +55,7 @@ function createDefaultSkills() {
             Skill.create({
                 tags: [w, l],
                 title: 'jQuery',
-                mastered: true, 
+                mastered: true,
                 know: false,
                 learning: false,
                 published: new Date('2011', '11', '01')
@@ -119,15 +119,15 @@ function createDefaultSkills() {
             Skill.create({
                 tags: [s, w, f],
                 title: 'CakePHP',
-                mastered: true,
-                know: false,
+                mastered: false,
+                know: true,
                 learning: false,
                 published: new Date('2011', '09', '01')
             });Skill.create({
                 tags: [s, w, f],
                 title: 'Zend Framework',
-                mastered: true,
-                know: false,
+                mastered: false,
+                know: true,
                 learning: false,
                 published: new Date('2011', '09', '01')
             });
