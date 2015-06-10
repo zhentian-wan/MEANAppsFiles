@@ -2,8 +2,10 @@
    Created by Answer1215 on 6/10/2015.
 
 
-.panel.panel-primary
+.panel.panel-primary(id="category")
    .panel-heading.text-center {{'body.skillCategory' | translate}}
    .panel-body
-      .category-nav
-         span.label.label-info(href="" ng-repeat="tag in cateCtrl.tags") {{tag}}
+      .category-nav.vcenter
+         h3(ng-repeat="(key, value) in cateCtrl.tags")
+            span.label.label-info(href="" ng-click="cateCtrl.highlight(key)" ng-class="{'label-warning': cateCtrl.isSelected(key)}") {{key}}
+               span.badge.pull-right {{value}}

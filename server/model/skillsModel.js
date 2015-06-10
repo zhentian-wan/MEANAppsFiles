@@ -17,10 +17,19 @@ var Skill = mongoose.model('Skill', skillSchema);
 
 function createDefaultSkills() {
 
+    var e = "Elementary",
+        w = "Web",
+        s = "Server",
+        m = "Mobile",
+        f = "Framework",
+        d = "Database",
+        t = "Testing",
+        l = "Library";
+
     Skill.find({}).exec(function(err, collection) {
         if(_.size(collection) == 0) {
             Skill.create({
-                tags: ['C#'],
+                tags: [e],
                 title: 'C#',
                 mastered: false,
                 know: true,
@@ -28,7 +37,7 @@ function createDefaultSkills() {
                 published: new Date('2011', '09', '01')
             });
             Skill.create({
-                tags: ["Java"],
+                tags: [e],
                 title: 'Java',
                 mastered: false,
                 know: true,
@@ -36,23 +45,23 @@ function createDefaultSkills() {
                 published: new Date('2010', '03', '01')
             });
             Skill.create({
-                tags: ["Javascript", "Web"],
+                tags: [w, e],
                 title: 'Javascript',
                 mastered: true,
-                know: true,
+                know: false,
                 learning: false,
                 published: new Date('2011', '11', '01')
             });
             Skill.create({
-                tags: ["Javascript", "jQuery", "Web"],
+                tags: [w, l],
                 title: 'jQuery',
-                mastered: true,
-                know: true,
+                mastered: true, 
+                know: false,
                 learning: false,
                 published: new Date('2011', '11', '01')
             });
             Skill.create({
-                tags: ["Javascirpt", 'Node', "Web", "Server"],
+                tags: [s, w],
                 title: 'Node.js',
                 mastered: true,
                 know: false,
@@ -60,7 +69,7 @@ function createDefaultSkills() {
                 published: new Date('2014', '05', '01')
             });
             Skill.create({
-                tags: ["Javascirpt", 'AngularJS', "Web"],
+                tags: [w, f],
                 title: 'AngularJS',
                 mastered: true,
                 know: false,
@@ -68,7 +77,7 @@ function createDefaultSkills() {
                 published: new Date('2014', '07', '01')
             });
             Skill.create({
-                tags: ["Javascirpt", "Express", "Node", "Web", "Server"],
+                tags: [w, s, f],
                 title: 'Express.js',
                 mastered: true,
                 know: false,
@@ -76,7 +85,7 @@ function createDefaultSkills() {
                 published: new Date('2014', '07', '01')
             });
             Skill.create({
-                tags: ["Javascirpt", "Database", "NoSQL", "Web"],
+                tags: [d],
                 title: 'MongoDB',
                 mastered: true,
                 know: false,
@@ -84,7 +93,7 @@ function createDefaultSkills() {
                 published: new Date('2014', '09', '01')
             });
             Skill.create({
-                tags: ["Javascirpt", "Karma", "Testing", "Web"],
+                tags: [w,t],
                 title: 'Karma Jasmine',
                 mastered: true,
                 know: false,
@@ -92,7 +101,7 @@ function createDefaultSkills() {
                 published: new Date('2014', '09', '01')
             });
             Skill.create({
-                tags: ["Ruby", "Rails", "Web"],
+                tags: [f, w, s],
                 title: 'Ruby on Rails',
                 mastered: false,
                 know: true,
@@ -100,7 +109,7 @@ function createDefaultSkills() {
                 published: new Date('2014', '12', '01')
             });
             Skill.create({
-                tags: ["PHP", "Web"],
+                tags: [s, w],
                 title: 'PHP',
                 mastered: true,
                 know: false,
@@ -108,7 +117,22 @@ function createDefaultSkills() {
                 published: new Date('2011', '09', '01')
             });
             Skill.create({
-                tags: ["Android", "Mobile"],
+                tags: [s, w, f],
+                title: 'CakePHP',
+                mastered: true,
+                know: false,
+                learning: false,
+                published: new Date('2011', '09', '01')
+            });Skill.create({
+                tags: [s, w, f],
+                title: 'Zend Framework',
+                mastered: true,
+                know: false,
+                learning: false,
+                published: new Date('2011', '09', '01')
+            });
+            Skill.create({
+                tags: [m],
                 title: 'Android',
                 mastered: false,
                 know: true,
@@ -116,7 +140,7 @@ function createDefaultSkills() {
                 published: new Date('2014', '06', '01')
             });
             Skill.create({
-                tags: ["React", "Web"],
+                tags: [w, f],
                 title: 'React',
                 mastered: false,
                 know: true,
@@ -124,7 +148,7 @@ function createDefaultSkills() {
                 published: new Date('2015', '01', '01')
             });
             Skill.create({
-                tags: ["RxJS", "Web"],
+                tags: [w, l],
                 title: 'RxJS',
                 mastered: false,
                 know: true,
@@ -132,7 +156,15 @@ function createDefaultSkills() {
                 published: new Date('2015', '05', '01')
             });
             Skill.create({
-                tags: ["D3", "Web"],
+                tags: [w, l],
+                title: 'lodash',
+                mastered: false,
+                know: true,
+                learning: true,
+                published: new Date('2015', '05', '01')
+            });
+            Skill.create({
+                tags: [w, l],
                 title: 'D3.js',
                 mastered: false,
                 know: true,
@@ -140,7 +172,7 @@ function createDefaultSkills() {
                 published: new Date('2015', '06', '01')
             });
             Skill.create({
-                tags: ["MySQL", "Database"],
+                tags: [d],
                 title: 'MySQL',
                 mastered: true,
                 know: false,
