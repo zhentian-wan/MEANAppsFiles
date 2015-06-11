@@ -13,21 +13,22 @@ function SkillsController(SkillCachedService) {
     vm.sortOrder = vm.sortOptions[0].value;
 }
 
+function appMainSkillConfig($stateProvider) {
+    $stateProvider.state('app.skills', {
+        url: '/skills',
+        views: {
+            'main@': {
+                templateUrl: '/partials/main/skill/skill_list',
+                controller: 'SkillsController'
+            }
+        }
+    });
+}
+
 angular.module('app.main.skill', [
     'app.models.skill-models',
     'app.main.skill.category'
 ])
 
-    .config(function($stateProvider) {
-        $stateProvider.state('app.skills', {
-            url: '/skills',
-            views: {
-                'main@': {
-                    templateUrl: '/partials/main/skill/skill_list',
-                    controller: 'SkillsController'
-                }
-            }
-        })
-    })
-
+    .config(appMainSkillConfig)
     .controller('SkillsController', SkillsController);

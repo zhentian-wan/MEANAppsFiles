@@ -23,5 +23,4 @@ function pageNav() {
 
 
 angular.module('app.main')
-
     .directive('pageNav', pageNav);

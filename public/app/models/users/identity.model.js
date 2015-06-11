@@ -29,5 +29,4 @@ function IdentityFactory($window, UserResource) {
 }
 
 angular.module('app.models.user-models')
-
     .factory('IdentityFactory', IdentityFactory);

@@ -6,8 +6,7 @@ function categoryNav() {
 
     function categoryController(SkillCachedService) {
         var vm = this,
-            pre = null,
-            isSelected = false;
+            pre = null;
 
         SkillCachedService.query().$promise.then(function(skills) {
 
@@ -67,11 +66,4 @@ function categoryNav() {
 
 angular.module('app.main.skill.category', [])
 
-    .directive('categoryNav', categoryNav)
-
-    .filter('ary2str', function() {
-        return function(arr) {
-            return arr.join(' ').toLowerCase();
-        }
-
-    });
+    .directive('categoryNav', categoryNav);

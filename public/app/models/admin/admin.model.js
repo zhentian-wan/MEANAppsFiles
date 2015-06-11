@@ -23,5 +23,4 @@ function AdminService($q) {
 
 
 angular.module('app.models.admin-models', [])
-
     .service('AdminService', AdminService);

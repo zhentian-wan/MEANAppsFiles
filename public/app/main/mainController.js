@@ -7,20 +7,20 @@ function MainController(SkillCachedService) {
     vm.skills = SkillCachedService.query();
 }
 
+function appMainConfig($stateProvider) {
+    $stateProvider.state('app.main', {
+        url: '/',
+        views: {
+            'main@': {
+                templateUrl: '/partials/main/main',
+                controller: 'MainController'
+            }
+        }
+    })
+}
+
 angular.module('app.main', [
     'app.main.skill'
 ])
-
-    .config(function($stateProvider) {
-        $stateProvider.state('app.main', {
-            url: '/',
-            views: {
-                'main@': {
-                    templateUrl: '/partials/main/main',
-                    controller: 'MainController'
-                }
-            }
-        })
-    })
-
+    .config(appMainConfig)
     .controller('MainController', MainController);

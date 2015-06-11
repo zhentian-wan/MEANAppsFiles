@@ -14,7 +14,6 @@ module.exports = function(app, config) {
      * */
     app.use('/api/skills', skillsBlock);
 
-
     app.get('/api/lang', function(req, res) {
         // Check endpoint called with appropriate param.:
         if(!req.query.lang) {
@@ -52,8 +51,6 @@ module.exports = function(app, config) {
 
     // All routes handled by this route, give client side to handle
     app.get('*', function(req, res) {
-        var langFile = config.rootPath + 'public/app/i18n/i18n.json',
-            wordsFile = config.rootPath + 'public/app/i18n/words.json';
         res.render('index', {
             bootstrappedUser: req.user //server will remember the current user
         });

@@ -94,5 +94,4 @@ function loginService($http, $q, IdentityFactory, UserResource, NOT_AUTHORIZED){
 }
 
 angular.module('app.models.user-models')
-
     .service('loginService', loginService);

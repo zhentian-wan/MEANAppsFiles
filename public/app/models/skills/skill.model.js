@@ -25,6 +25,5 @@ function SkillCachedService(SkillService) {
 }
 
 angular.module('app.models.skill-models', [])
-
     .service('SkillService', SkillService)
     .service('SkillCachedService', SkillCachedService);

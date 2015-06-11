@@ -28,28 +28,29 @@ function ProfileController(IdentityFactory, loginService, Toast) {
     };
 }
 
-angular.module('app.user')
 
-    .config(function($stateProvider) {
+function appProfileConfig($stateProvider) {
 
-        var userRoleCheck = {
-            user: {
-                auth: function(loginService) {
-                    return loginService.authorizeAuthenicatedUserForRoute();
-                }
+    var userRoleCheck = {
+        user: {
+            auth: function(loginService) {
+                return loginService.authorizeAuthenicatedUserForRoute();
             }
-        };
+        }
+    };
 
-        $stateProvider.state('app.profile', {
-            url: '/profile',
-            views: {
-                'main@': {
-                    templateUrl: '/partials/users/profile',
-                    controller: 'ProfileController',
-                    resolve: userRoleCheck.user
-                }
+    $stateProvider.state('app.profile', {
+        url: '/profile',
+        views: {
+            'main@': {
+                templateUrl: '/partials/users/profile',
+                controller: 'ProfileController',
+                resolve: userRoleCheck.user
             }
-        })
+        }
     })
+}
 
+angular.module('app.user')
+    .config(appProfileConfig)
     .controller('ProfileController', ProfileController);

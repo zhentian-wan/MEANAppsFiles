@@ -82,5 +82,4 @@ function SignupFormFactory($translate) {
 }
 
 angular.module('app.user')
-
     .factory('SignupFormFactory', SignupFormFactory);

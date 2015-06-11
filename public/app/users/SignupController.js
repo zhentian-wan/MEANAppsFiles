@@ -35,5 +35,4 @@ function SignupController(loginService, Toast, $location, SignupFormFactory) {
 }
 
 angular.module('app.user')
-
     .controller('SignupController', SignupController);

@@ -11,18 +11,18 @@ function SkillDetailController(SkillCachedService, $stateParams) {
     })
 }
 
-angular.module('app.main.skill')
-
-    .config(function($stateProvider) {
-        $stateProvider.state('app.skills.skill-detail', {
-            url: '/:id',
-            views: {
-                'main@': {
-                    templateUrl: '/partials/main/skill/skill_detail',
-                    controller: 'SkillDetailController'
-                }
+function appMainSkillDetailConfig($stateProvider) {
+    $stateProvider.state('app.skills.skill-detail', {
+        url: '/:id',
+        views: {
+            'main@': {
+                templateUrl: '/partials/main/skill/skill_detail',
+                controller: 'SkillDetailController'
             }
-        })
+        }
     })
+}
 
+angular.module('app.main.skill')
+    .config(appMainSkillDetailConfig)
     .controller('SkillDetailController', SkillDetailController);

@@ -32,22 +32,22 @@ function AccountController(loginService, ToastFactory, IdentityFactory, $locatio
 
 }
 
+function appUserConfig($stateProvider) {
+
+    $stateProvider.state('app.signup', {
+        url: '/signup',
+        views: {
+            'main@': {
+                templateUrl: '/partials/users/signup',
+                controller: 'SignupController'
+            }
+        }
+    })
+}
+
 angular.module('app.user', [
     'app.models.user-models',
     'app.admin'
 ])
-
-    .config(function($stateProvider) {
-
-        $stateProvider.state('app.signup', {
-            url: '/signup',
-            views: {
-                'main@': {
-                    templateUrl: '/partials/users/signup',
-                    controller: 'SignupController'
-                }
-            }
-        })
-    })
-
+    .config(appUserConfig)
     .controller('AccountController', AccountController);

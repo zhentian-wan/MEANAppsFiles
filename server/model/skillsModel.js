@@ -140,6 +140,14 @@ function createDefaultSkills() {
                 published: new Date('2014', '06', '01')
             });
             Skill.create({
+                tags: [d],
+                title: 'Firebase',
+                mastered: false,
+                know: true,
+                learning: false,
+                published: new Date('2014', '10', '01')
+            });
+            Skill.create({
                 tags: [w, f],
                 title: 'React',
                 mastered: false,
