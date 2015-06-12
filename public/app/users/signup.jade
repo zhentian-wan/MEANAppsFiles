@@ -9,5 +9,5 @@
             .pull-right
                button.btn.btn-info(ng-click="signupCtrl.signup()" ng-disabled="signupCtrl.signupForm.$invalid" ) {{signupCtrl.isSubmitting == true ? 'form.saving': 'header.signUp'| translate}}
                | &nbsp;
-               a.btn.btn-default(href="/") {{'form.cancel'| translate}}
+               a.btn.btn-default(ui-sref="app.main()") {{'form.cancel'| translate}}
 
