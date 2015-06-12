@@ -99,3 +99,28 @@ footer {
   min-height: 20px;
   height: auto;
 }
+@media (max-width: 460px) {
+  .jumbotron {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    padding-top: 61px;
+    border: 0;
+    position: relative;
+  }
+  .jumbotron h1 {
+    font-size: 28px;
+    top: -12px;
+    left: 15px;
+    position: absolute;
+  }
+  .jumbotron blockquote {
+    background: rgba(0,0,0,0.45);
+    bottom: 0;
+    border: 0;
+    margin: 0;
+    height: auto;
+    width: 100%;
+    font-size: 11px;
+  }
+}

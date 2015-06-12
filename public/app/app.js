@@ -9,12 +9,12 @@ function AppController($rootScope, NOT_AUTHORIZED, $location ) {
     $rootScope.$on('$viewContentLoaded', function() {
         var tl = new TimelineLite();
         tl.fromTo($('.jumbotron>h1'), 0.7, {marginLeft: '500px', alpha: 0}, {
-            marginLeft: '30px',
+            marginLeft: 0,
             alpha: 1,
             ease: Ease.easeInOut
         })
             .fromTo($('.jumbotron>blockquote'), 0.7, {marginLeft: '400px', alpha: 0}, {
-                marginLeft: '30px',
+                marginLeft: 0,
                 alpha: 1,
                 ease: Ease.easeInOut
             });
