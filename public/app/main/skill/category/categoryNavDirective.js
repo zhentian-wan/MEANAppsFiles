@@ -6,7 +6,7 @@ function categoryNav() {
 
     function categoryController(SkillCachedService) {
         var vm = this,
-            pre = null;
+            activateCategory = "";
 
         SkillCachedService.query().$promise.then(function(skills) {
 
@@ -18,39 +18,45 @@ function categoryNav() {
             vm.tags = _.countBy(vm.tags_ununiqed, _.identity);
         });
 
-        vm.highlight = function(key) {
+        vm.isActive = function(key) {
 
-            if(pre == null) {
-                d3.selectAll('.skills')
-                    .selectAll('.' + key.toLowerCase())
-                    .classed('text-warning', true);
+            return activateCategory === key;
+        };
+
+        vm.toggleCategory = function(key) {
+
+            if(activateCategory === key) {
+                activateCategory = "";
+                unHighlightAll();
             } else {
-
-                if(pre == key) {
-                    d3.selectAll('.skills')
-                        .selectAll('.text-warning')
-                        .classed('text-warning', false);
-                } else {
-                    d3.selectAll('.skills')
-                        .selectAll('.text-warning')
-                        .classed('text-warning', false);
-
-                    d3.selectAll('.skills')
-                        .selectAll('.' + key.toLowerCase())
-                        .classed('text-warning', true);
-                }
+                activateCategory = key;
+                unHighlightAll();
+                hightlight(key);
             }
-
-            pre = key;
         };
 
         vm.isSelected = function(key) {
 
-            if(pre == null) {
+            if(activateCategory == null) {
                 return false;
             }
 
-            return new RegExp(key).test(pre);
+            return new RegExp(key).test(activateCategory);
+        };
+
+        function hightlight(key) {
+
+            d3.selectAll('.skills')
+                .selectAll('.' + key.toLowerCase())
+                .classed('text-warning', true)
+                .style('font-weight', 'bold');
+        }
+
+        function unHighlightAll() {
+            d3.selectAll('.skills')
+                .selectAll('.skill')
+                .classed('text-warning', false)
+                .style('font-weight', 'normal');
         }
     }
 
@@ -59,7 +65,7 @@ function categoryNav() {
         restrict: "E",
         bindToController: true,
         controller: categoryController,
-        controllerAs: 'cateCtrl',
+        controllerAs: 'categoryCtrl',
         templateUrl: '/partials/main/skill/category/categoryNav'
     }
 }
