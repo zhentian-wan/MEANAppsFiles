@@ -1,6 +1,6 @@
 MEANAppsFiles
 
-# [Demo](https://mean-learning.herokuapp.com/#/)
+# [Demo](https://zhentian.herokuapp.com/#/)
 
 ***
 
