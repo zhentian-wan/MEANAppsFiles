@@ -5,10 +5,16 @@ function pageNav() {
 
     function pageNavController($location) {
         var vm = this;
+            vm.hash = "";
 
         vm.isPage = function(name) {
-            return new RegExp("/" + name + "($|\/)").test($location.path());
-        }
+            return new RegExp("#" + name + "($|\/)").test("#" + vm.hash);
+        };
+
+        vm.scrollTo = function(el) {
+            $("body").animate({scrollTop: $("#"+el).offset().top}, "slow");
+            vm.hash = el;
+        };
     }
 
     return {

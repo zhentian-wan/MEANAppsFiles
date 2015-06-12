@@ -46,9 +46,11 @@
       "masterSkills": "熟练的技能",
       "knowingSkills": "了解的技能",
       "learningSkills": "正学习的技能",
-      "skillDetail": "详细技能"
+      "skillDetail": "详细技能",
+      "skillDesc": "熟练掌握Javascript, 以及其框架AngularJS, NodeJS, ExpressJS"
     },
-    "skillCategory": "技能分类"
+    "skillCategory": "技能分类",
+    "experience": "工作经验"
   },
   "info": {
     "loginSuccess": "成功登入!",

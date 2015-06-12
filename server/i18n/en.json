@@ -46,9 +46,11 @@
       "masterSkills": "Master skills",
       "knowingSkills": "Knowing skills",
       "learningSkills": "Learning skills",
-      "skillDetail": "Skill Detail"
+      "skillDetail": "Skill Detail",
+      "skillDesc": "I have a solid background on Javascript related techs, such as AngularJS, NodeJS, ExpressJS. Also I have exploded many Javascript libraries such as RxJS & lodash. And I am continuing learning and improving my skills :)"
     },
-    "skillCategory": "Skills Category"
+    "skillCategory": "Skills Category",
+    "experience": "Experiences"
   },
   "info": {
     "loginSuccess": "Successfully logged in!",

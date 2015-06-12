@@ -8,13 +8,13 @@ function AppController($rootScope, NOT_AUTHORIZED, $location ) {
 
     $rootScope.$on('$viewContentLoaded', function() {
         var tl = new TimelineLite();
-        tl.fromTo($('.jumbotron>h1'), 0.5, {marginLeft: '300px', alpha: 0}, {
-            marginLeft: 0,
+        tl.fromTo($('.jumbotron>h1'), 0.7, {marginLeft: '500px', alpha: 0}, {
+            marginLeft: '30px',
             alpha: 1,
             ease: Ease.easeInOut
         })
-            .fromTo($('.jumbotron>blockquote'), 0.5, {marginLeft: '200px', alpha: 0}, {
-                marginLeft: 0,
+            .fromTo($('.jumbotron>blockquote'), 0.7, {marginLeft: '400px', alpha: 0}, {
+                marginLeft: '30px',
                 alpha: 1,
                 ease: Ease.easeInOut
             });
