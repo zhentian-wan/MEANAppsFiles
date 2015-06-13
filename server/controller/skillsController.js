@@ -23,14 +23,14 @@ exports.createSkill = function(req, res) {
     // Data should be validate
     if(req.user.hasRole('admin') && skillData.title && skillData.description.length > 4) {
         // Skill title should not be duplicated
-        Skill.create(skillData, function(err, course) {
+        Skill.create(skillData, function(err, skill) {
             if(err) {
                 if(err.toString().indexOf('E11000') > -1) {
                     err = new Error('Duplicate name');
                 }
                 res.status(400).json({reason: err.toString()});
             } else {
-                res.send(course);
+                res.send(skill);
             }
         });
     } else {

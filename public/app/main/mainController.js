@@ -20,7 +20,8 @@ function appMainConfig($stateProvider) {
 }
 
 angular.module('app.main', [
-    'app.main.skill'
+    'app.main.skill',
+    'app.main.experience'
 ])
     .config(appMainConfig)
     .controller('MainController', MainController);

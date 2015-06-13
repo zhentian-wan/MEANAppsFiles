@@ -1,5 +1,6 @@
 var usersBlock = require('../routes/Users'),
     skillsBlock = require('../routes/Skills'),
+    experiencesBlock = require('../routes/Experiences'),
     auth = require('./auth');
 
 module.exports = function(app, config) {
@@ -13,6 +14,11 @@ module.exports = function(app, config) {
      * Skill route
      * */
     app.use('/api/skills', skillsBlock);
+
+    /*
+    *  Experience route
+    * */
+    app.use('/api/experiences', experiencesBlock);
 
     app.get('/api/lang', function(req, res) {
         // Check endpoint called with appropriate param.:
