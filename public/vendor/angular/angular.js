@@ -1490,7 +1490,7 @@ function getNgAttribute(element, ngAttr) {
      }
      GoodController2.$inject = ['$scope'];
    </file>
-   <file name="style.css">
+   <file name="experience.css">
    div[ng-controller] {
        margin-bottom: 1em;
        -webkit-border-radius: 4px;
@@ -4545,7 +4545,7 @@ function $AnchorScrollProvider() {
                };
              }]);
        </file>
-       <file name="style.css">
+       <file name="experience.css">
          #scrollArea {
            height: 280px;
            overflow: auto;
@@ -4596,7 +4596,7 @@ function $AnchorScrollProvider() {
              }
            ]);
        </file>
-       <file name="style.css">
+       <file name="experience.css">
          body {
            padding-top: 50px;
          }
@@ -5749,7 +5749,7 @@ function $BrowserProvider() {
            };
          }]);
      </file>
-     <file name="style.css">
+     <file name="experience.css">
        p {
          margin: 10px 0 3px;
        }
@@ -22360,7 +22360,7 @@ function classDirective(name, selector) {
        <input ng-model="style4" placeholder="Type: bold, strike" aria-label="Type: bold, strike"><br>
        <label><input type="checkbox" ng-model="warning"> warning (apply "orange" class)</label>
      </file>
-     <file name="style.css">
+     <file name="experience.css">
        .strike {
            text-decoration: line-through;
        }
@@ -22424,7 +22424,7 @@ function classDirective(name, selector) {
       <br>
       <span class="base-class" ng-class="myVar">Sample Text</span>
      </file>
-     <file name="style.css">
+     <file name="experience.css">
        .base-class {
          -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
          transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
@@ -22491,7 +22491,7 @@ var ngClassDirective = classDirective('', true);
           </li>
         </ol>
      </file>
-     <file name="style.css">
+     <file name="experience.css">
        .odd {
          color: red;
        }
@@ -22539,7 +22539,7 @@ var ngClassOddDirective = classDirective('Odd', 0);
           </li>
         </ol>
      </file>
-     <file name="style.css">
+     <file name="experience.css">
        .odd {
          color: red;
        }
@@ -24261,7 +24261,7 @@ is set to `true`. The parse error is stored in `ngModel.$error.parse`.
  * that content using the `$sce` service.
  *
  * <example name="NgModelController" module="customControl" deps="angular-sanitize.js">
-    <file name="style.css">
+    <file name="experience.css">
       [contenteditable] {
         border: 1px solid black;
         background-color: white;
@@ -27348,7 +27348,7 @@ var ngHideDirective = ['$animate', function($animate) {
         <span ng-style="myStyle">Sample Text</span>
         <pre>myStyle={{myStyle}}</pre>
      </file>
-     <file name="style.css">
+     <file name="experience.css">
        span {
          color: black;
        }

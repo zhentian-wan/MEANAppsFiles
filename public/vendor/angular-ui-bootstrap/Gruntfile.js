@@ -187,7 +187,7 @@ module.exports = function(grunt) {
           '<%= concat.dist_tpls.dest %>'
         ],
         styles: [
-          'docs/css/style.css'
+          'docs/css/experience.css'
         ],
         navTemplate: 'docs/nav.html',
         title: 'ui-bootstrap',

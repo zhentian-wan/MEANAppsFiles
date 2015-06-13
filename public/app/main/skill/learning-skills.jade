@@ -5,6 +5,6 @@
    .panel-heading.text-center {{'body.skills.learningSkills' | translate}}
    .panel-body
       .row(ng-repeat="skill in main.skills | filter:{learning: true} | orderBy: 'published' :true | limitTo: 10")
-         .col-md-3 {{::skill.published | date: 'MM/yyyy'}}
-         .col-md-9
+         .col-md-3.col-xs-3 {{::skill.published | date: 'MM/yyyy'}}
+         .col-md-5.col-xs-5
             a(ui-sref="app.skills.skill-detail({id: skill._id})" class="skill {{skill.tags | ary2str}}") {{skill.title}}

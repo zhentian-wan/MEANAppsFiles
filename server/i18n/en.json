@@ -11,8 +11,7 @@
     "signUp": "Sign up",
     "userAdmin": "User admin",
     "userProfile": "User profile",
-    "signOut": "Sign out",
-    "experiences": "Experiences"
+    "signOut": "Sign out"
   },
   "form": {
     "email": "Email address: ",
@@ -50,7 +49,8 @@
       "skillDesc": "I have a solid background on Javascript related techs, such as AngularJS, NodeJS, ExpressJS. Also I have exploded many Javascript libraries such as RxJS & lodash. And I am continuing learning and improving my skills :)"
     },
     "skillCategory": "Skills Category",
-    "experience": "Experiences"
+    "experience": "Experiences",
+    "experienceDesc": "Have been working on MEAN (Angular, Node, Express & MongoDB) applications since 09/2014 in a company, 4+ year experience with PHP & Javascript experience for real web application. Nowadays, put more effort on large web application. "
   },
   "info": {
     "loginSuccess": "Successfully logged in!",

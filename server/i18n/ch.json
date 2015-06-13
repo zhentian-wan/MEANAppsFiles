@@ -11,8 +11,7 @@
     "signUp": "注册",
     "userAdmin": "用户管理",
     "userProfile": "用户资料",
-    "signOut": "切换用户",
-    "experiences": "工作经验"
+    "signOut": "切换用户"
   },
   "form": {
     "email": "邮箱: ",
@@ -50,7 +49,8 @@
       "skillDesc": "熟练掌握Javascript, 以及其框架AngularJS, NodeJS, ExpressJS"
     },
     "skillCategory": "技能分类",
-    "experience": "工作经验"
+    "experience": "工作经验",
+    "experienceDesc": "自2014年9月开始在公司从事MEAN app (Angular, Node, Express & MongoDB) 的编程。 有4年以上的PHP和Javascript的实际网站开发经验。最近一直在为做大型网站而努力。"
   },
   "info": {
     "loginSuccess": "成功登入!",

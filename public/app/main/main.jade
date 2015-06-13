@@ -3,20 +3,7 @@
         h1.text-justify {{'body.main.webDeveloper' | translate}}
         blockquote.text-justify {{'body.main.AAA' | translate}}
 
-    section(id="skill_section")
-        .container
-            .row.text-center
-                .col-md-12
-                    h1 {{'header.skills' | translate}}
-                .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1
-                    p {{'body.skills.skillDesc' | translate}}
-            .row
-                .col-md-12
-                    category-nav
-            .row
-                .col-md-4
-                    div(ng-include="'/partials/main/master-skills'")
-                .col-md-4
-                    div(ng-include="'/partials/main/knowing-skills'")
-                .col-md-4
-                    div(ng-include="'/partials/main/learning-skills'")
+    include ./skill/skills
+    include ./experience/experience
+
+

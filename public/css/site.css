@@ -7,6 +7,21 @@ body {
   font-size: 16px;
   padding-top: 61px;
 }
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+h1,
+h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
 .jumbotron {
   position: relative;
   color: #d7e0e2;
@@ -37,21 +52,21 @@ blockquote {
 .navbar-header a.navbar-brand h6 {
   color: #ccc;
 }
-#skill_section {
-  background: url("../images/bg2.png") center top;
-}
-#skill_section .container {
-  padding-top: 40px;
-}
-#skill_section h1 {
+.section_h1 {
   text-decoration: underline;
 }
-#skill_section p {
+.section_p {
   margin-top: 10px;
   color: #789;
   font-size: 14px;
   line-height: 20px;
   padding-bottom: 20px;
+}
+#skill_section {
+  background: url("../images/bg2.png") center top;
+}
+#skill_section .container {
+  padding-top: 40px;
 }
 .category-nav {
   overflow: hidden;
