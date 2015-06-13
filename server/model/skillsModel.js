@@ -15,8 +15,7 @@ var skillSchema = mongoose.Schema({
 
 var Skill = mongoose.model('Skill', skillSchema);
 
-function createDefaultSkills() {
-
+function getTagCategories() {
     var e = "Elementary",
         w = "Web",
         s = "Server",
@@ -26,10 +25,26 @@ function createDefaultSkills() {
         t = "Testing",
         l = "Library";
 
+    return {
+        e: e,
+        w: w,
+        s: s,
+        m: m,
+        f: f,
+        d: d,
+        t: t,
+        l: l
+    };
+}
+
+function createDefaultSkills() {
+
+    var c = getTagCategories();
+
     Skill.find({}).exec(function(err, collection) {
         if(_.size(collection) == 0) {
             Skill.create({
-                tags: [e],
+                tags: [c.e],
                 title: 'C#',
                 mastered: false,
                 know: true,
@@ -37,7 +52,7 @@ function createDefaultSkills() {
                 published: new Date('2011', '09', '01')
             });
             Skill.create({
-                tags: [e],
+                tags: [c.e],
                 title: 'Java',
                 mastered: false,
                 know: true,
@@ -45,7 +60,7 @@ function createDefaultSkills() {
                 published: new Date('2010', '03', '01')
             });
             Skill.create({
-                tags: [w, e],
+                tags: [c.w, c.e],
                 title: 'Javascript',
                 mastered: true,
                 know: false,
@@ -53,7 +68,7 @@ function createDefaultSkills() {
                 published: new Date('2011', '11', '01')
             });
             Skill.create({
-                tags: [w, l],
+                tags: [c.w, c.l],
                 title: 'jQuery',
                 mastered: true,
                 know: false,
@@ -61,7 +76,7 @@ function createDefaultSkills() {
                 published: new Date('2011', '11', '01')
             });
             Skill.create({
-                tags: [s, w],
+                tags: [c.s, c.w],
                 title: 'Node.js',
                 mastered: true,
                 know: false,
@@ -69,7 +84,7 @@ function createDefaultSkills() {
                 published: new Date('2014', '05', '01')
             });
             Skill.create({
-                tags: [w, f],
+                tags: [c.w, c.f],
                 title: 'AngularJS',
                 mastered: true,
                 know: false,
@@ -77,7 +92,7 @@ function createDefaultSkills() {
                 published: new Date('2014', '07', '01')
             });
             Skill.create({
-                tags: [w, s, f],
+                tags: [c.w, c.s, c.f],
                 title: 'Express.js',
                 mastered: true,
                 know: false,
@@ -85,7 +100,7 @@ function createDefaultSkills() {
                 published: new Date('2014', '07', '01')
             });
             Skill.create({
-                tags: [d],
+                tags: [c.d],
                 title: 'MongoDB',
                 mastered: true,
                 know: false,
@@ -93,7 +108,7 @@ function createDefaultSkills() {
                 published: new Date('2014', '09', '01')
             });
             Skill.create({
-                tags: [w,t],
+                tags: [c.w, c.t],
                 title: 'Karma Jasmine',
                 mastered: true,
                 know: false,
@@ -101,7 +116,7 @@ function createDefaultSkills() {
                 published: new Date('2014', '09', '01')
             });
             Skill.create({
-                tags: [f, w, s],
+                tags: [c.f, c.w, c.s],
                 title: 'Ruby on Rails',
                 mastered: false,
                 know: true,
@@ -109,7 +124,7 @@ function createDefaultSkills() {
                 published: new Date('2014', '12', '01')
             });
             Skill.create({
-                tags: [s, w],
+                tags: [c.s, c.w],
                 title: 'PHP',
                 mastered: true,
                 know: false,
@@ -117,14 +132,14 @@ function createDefaultSkills() {
                 published: new Date('2011', '09', '01')
             });
             Skill.create({
-                tags: [s, w, f],
+                tags: [c.s, c.w, c.f],
                 title: 'CakePHP',
                 mastered: false,
                 know: true,
                 learning: false,
                 published: new Date('2011', '09', '01')
             });Skill.create({
-                tags: [s, w, f],
+                tags: [c.s, c.w, c.f],
                 title: 'Zend Framework',
                 mastered: false,
                 know: true,
@@ -132,7 +147,7 @@ function createDefaultSkills() {
                 published: new Date('2011', '09', '01')
             });
             Skill.create({
-                tags: [m],
+                tags: [c.m],
                 title: 'Android',
                 mastered: false,
                 know: true,
@@ -140,7 +155,7 @@ function createDefaultSkills() {
                 published: new Date('2014', '06', '01')
             });
             Skill.create({
-                tags: [d],
+                tags: [c.d],
                 title: 'Firebase',
                 mastered: false,
                 know: true,
@@ -156,7 +171,7 @@ function createDefaultSkills() {
                 published: new Date('2015', '01', '01')
             });
             Skill.create({
-                tags: [w, l],
+                tags: [c.w, c.l],
                 title: 'RxJS',
                 mastered: false,
                 know: true,
@@ -164,7 +179,7 @@ function createDefaultSkills() {
                 published: new Date('2015', '05', '01')
             });
             Skill.create({
-                tags: [w, l],
+                tags: [c.w, c.l],
                 title: 'lodash',
                 mastered: false,
                 know: true,
@@ -172,7 +187,7 @@ function createDefaultSkills() {
                 published: new Date('2015', '05', '01')
             });
             Skill.create({
-                tags: [w, l],
+                tags: [c.w, c.l],
                 title: 'D3.js',
                 mastered: false,
                 know: true,
@@ -180,7 +195,7 @@ function createDefaultSkills() {
                 published: new Date('2015', '06', '01')
             });
             Skill.create({
-                tags: [d],
+                tags: [c.d],
                 title: 'MySQL',
                 mastered: true,
                 know: false,
@@ -192,3 +207,4 @@ function createDefaultSkills() {
 }
 
 exports.createDefaultSkills = createDefaultSkills;
+exports.getTagCategories = getTagCategories;
