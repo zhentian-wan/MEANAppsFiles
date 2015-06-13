@@ -37,11 +37,6 @@ header {
     background: #303e49;
 }
 
-header h1 {
-    color: white;
-    font-size: 18px;
-    font-size: 1.125rem;
-}
 
 #cd-timeline {
     position: relative;
@@ -414,5 +409,10 @@ header h1 {
     .cd-timeline-content span {
         font-size: 13px;
         font-size: 1.3rem;
+    }
+
+    .section_h1{
+        font-size: 24px;
+        font-size: 2.8rem;
     }
 }
