@@ -21,7 +21,8 @@
     "angular-formly": "~6.10.1",
     "angular-formly-templates-bootstrap": "~4.3.1",
     "d3": "~3.5.5",
-    "angular-cookies": "~1.4.0"
+    "angular-cookies": "~1.4.0",
+    "crypto-js": "~3.1.5"
   },
   "devDependencies": {
     "angular-rx": "~0.0.14"

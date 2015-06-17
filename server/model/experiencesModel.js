@@ -30,7 +30,7 @@ function createDefaultExperience() {
                 title: wd,
                 startDate: new Date('2014', '11'),
                 company: cp,
-                description: "Several sites by using AngularJS framework and Node.js & Express.js.",
+                description: "Work on Customer Management Systems for medical companies by using Node.js + AngularJS + Bootstrap based web applications.",
                 image: "make.png"
             });
             Experience.create({
@@ -38,7 +38,7 @@ function createDefaultExperience() {
                 title: wd,
                 startDate: new Date('2014', '11'),
                 company: cp,
-                description: "I was working on Content management system (CMS) based on MODx for several websites.",
+                description: "Working on three Content Management System (CMS) based on MODx for customers, using jQuery, Bootstrap, PHP.",
                 image: "make.png"
             });
             Experience.create({
@@ -48,7 +48,7 @@ function createDefaultExperience() {
                 endDate: new Date('2014', '11'),
                 isEnd: true,
                 company: cp,
-                description: "I was working on CakePHP & AngualrJS for a website.",
+                description: "I was working on Product Management System (PMS) for a medical company by using AngularJS + CakePHP + Bootstrap.",
                 image: "make.png"
             });
             Experience.create({

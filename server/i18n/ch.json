@@ -11,7 +11,8 @@
     "signUp": "注册",
     "userAdmin": "用户管理",
     "userProfile": "用户资料",
-    "signOut": "切换用户"
+    "signOut": "切换用户",
+    "adminPage": "管理员界面"
   },
   "form": {
     "email": "邮箱: ",
@@ -34,7 +35,12 @@
     "update": "更新",
     "cancel": "取消",
     "newUserInfo": "注册新用户",
-    "saving": "保存..."
+    "saving": "保存...",
+    "role": "身份",
+    "registeredUsers": "注册用户",
+    "action": "操作",
+    "picture": "头像"
+
   },
   "body": {
     "main": {
@@ -57,5 +63,8 @@
     "loginFail": "无法登入!",
     "logoutSuccess": "退出成功!",
     "selectLanguage": "选择语言: "
+  },
+  "common": {
+    "user": "用户"
   }
 }

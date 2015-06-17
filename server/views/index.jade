@@ -1,7 +1,7 @@
 extends ../includes/layout
 
 block main-content
-   section.content
+   section.content.fill
       .navbar.navbar-inverse.navbar-fixed-top
          .container-fluid
             .navbar-header
@@ -11,7 +11,5 @@ block main-content
                 page-nav
                 div.locale-selector
                 div(ng-include="'/partials/users/navbar-login'")
-      div(ui-view="main")
+      div.fill(ui-view="main")
 
-   footer.container-fluid.text-center
-      p &copy; 2015 Zhentian Wan

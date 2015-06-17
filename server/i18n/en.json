@@ -11,7 +11,8 @@
     "signUp": "Sign up",
     "userAdmin": "User admin",
     "userProfile": "User profile",
-    "signOut": "Sign out"
+    "signOut": "Sign out",
+    "adminPage": "Admin Page"
   },
   "form": {
     "email": "Email address: ",
@@ -34,7 +35,11 @@
     "update": "Update",
     "cancel": "Cancel",
     "newUserInfo":"New User Information",
-    "saving":"Saving..."
+    "saving":"Saving...",
+    "role": "Role",
+    "registeredUsers": "Registered Users",
+    "action": "Action",
+    "picture": "Picture"
   },
   "body": {
     "main": {
@@ -57,5 +62,8 @@
     "loginFail": "Cannot login!",
     "logoutSuccess": "Successfully logout!",
     "selectLanguage": "Select languages: "
+  },
+  "common": {
+    "user": "User"
   }
 }

@@ -13,8 +13,10 @@
             b.caret
          ul.dropdown-menu
             li(ng-show="users.user.isAdmin()")
-               a(ui-sref="app.admin()") {{'header.userAdmin' | translate}}
+               a(ui-sref="app.admin()") {{'header.adminPage' | translate}}
+            li.divider(ng-show="users.user.isAdmin()")
             li
                a(ui-sref="app.profile()") {{'header.userProfile' | translate}}
+            li.divider
             li
                a(href="" ng-click="users.signout()") {{'header.signOut' | translate}}

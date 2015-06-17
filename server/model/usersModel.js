@@ -2,12 +2,15 @@ var mongoose = require('mongoose'),
     _ = require('lodash'),
     encrypt = require('../utities/encryption');
 
+require('mongoose-type-email');
+
 
 //Users data
 var userSchema = mongoose.Schema({
     firstName: {type: String, required: '{PATH} is required!'},
     lastName: {type: String, required: '{PATH} is required!'},
     username: {type: String, required: '{PATH} is required!', unique: true},
+    email: {type: mongoose.SchemaTypes.Email, required: '{PATH} is required!', unique: true},
     salt: String,
     hash_pwd: String,
     role: [String]
@@ -33,16 +36,17 @@ exports.createDefaultUsers = function() {
                 firstName: 'zhentian',
                 lastName: 'wan',
                 username: 'wan',
+                email: 'answer881215@gmail.com',
                 salt: salt,
                 hash_pwd: hash,
                 role: 'admin'
             });
             salt = encrypt.createSalt();
             hash = encrypt.hashPwd(salt, 'ken');
-            User.create({firstName: 'ken', lastName: 'CD', username: 'ken', salt: salt, hash_pwd: hash, role: ''});
+            User.create({firstName: 'ken', lastName: 'CD', username: 'ken', email: 'zhentian@makehelsinki.com', salt: salt, hash_pwd: hash, role: ''});
             salt = encrypt.createSalt();
             hash = encrypt.hashPwd(salt, 'ben');
-            User.create({firstName: 'ben', lastName: 'Cophen', username: 'ben', salt: salt, hash_pwd: hash});
+            User.create({firstName: 'ben', lastName: 'Cophen', username: 'ben', email: 'joel@egghead.io', salt: salt, hash_pwd: hash});
         }
     })
 };

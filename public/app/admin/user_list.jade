@@ -1,11 +1,28 @@
 //
    Created by Answer1215 on 5/14/2015.
 
-
-.container(ng-controller="usrListController as usersCtrl")
-   table.table
-      tr.row(ng-repeat="user in usersCtrl.users")
-         td.col-sm-6 {{user.firstName + ' ' +user.lastName}}
-         td.col-sm-5.col-sm-offset-1
+h2.sub-header {{'form.registeredUsers' | translate}}
+.table-responsive
+   table.table.table-striped.table-hover(ng-controller="usrListController as usersCtrl")
+      thead
+         tr
+            th {{'form.picture' | translate}}
+            th {{'form.userName' | translate}}
+            th {{'form.email' | translate}}
+            th {{'form.firstName' | translate}}
+            th {{'form.lastName' | translate}}
+            th {{'form.role' | translate}}
+            th {{'form.action' | translate}}
+      tbody
+         tr(ng-repeat="user in usersCtrl.users")
+            td.avatar
+               gravatar(email="user.email")
+            td.vcenter {{user.username}}
+            td.vcenter {{user.email}}
+            td.vcenter {{user.firstName}}
+            td.vcenter {{user.lastName}}
+            td.vcenter {{user.role[0] || 'common.user' | translate}}
+            td.vcenter
                button.btn.btn-danger(ng-click="usersCtrl.removeUser(user)") {{'form.delete' | translate}}
+
 

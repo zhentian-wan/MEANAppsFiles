@@ -1,0 +1,20 @@
+.sidebar {
+  position: fixed;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  paddinig-bottom: 50px;
+  display: block;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.nav-sidebar {
+  margin-right: -21px;
+  margin-bottom: 20px;
+  margin-left: -20px;
+  padding-bottom: 52px;
+}
+.avatar img {
+  border-radius: 50%;
+}

@@ -44,7 +44,7 @@ function localeSelectorDirective() {
     };
 }
 
-function appConfig($compileProvider, $httpProvider, $stateProvider, $urlRouterProvider, $translateProvider) {
+function appConfig($compileProvider, $httpProvider, $stateProvider, $urlRouterProvider, $translateProvider, GravatarProvider) {
 
     $httpProvider.useApplyAsync(true);
     $compileProvider.debugInfoEnabled(false);
@@ -59,6 +59,8 @@ function appConfig($compileProvider, $httpProvider, $stateProvider, $urlRouterPr
     });
 
     $urlRouterProvider.otherwise('/');
+
+    GravatarProvider.setSize(60);
 }
 
 angular.module('app', [
@@ -71,7 +73,9 @@ angular.module('app', [
     'ngCookies',
     'pascalprecht.translate',
     'app.main',
-    'app.user'])
+    'app.user',
+    'ngGravatar'
+])
     .config(appConfig)
     .value('NOT_AUTHORIZED', 'Not authorized')
     .controller('AppController', AppController)
