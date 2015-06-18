@@ -1,10 +1,11 @@
 /**
  * Created by Answer1215 on 5/11/2015.
  */
-function MainController(SkillCachedService) {
+function MainController(SkillCachedService, EMAIL) {
     var vm = this;
 
     vm.skills = SkillCachedService.query();
+    vm.email = EMAIL;
 }
 
 function appMainConfig($stateProvider) {

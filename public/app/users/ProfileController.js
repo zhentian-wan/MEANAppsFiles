@@ -8,10 +8,12 @@ function ProfileController(IdentityFactory, loginService, Toast) {
     vm.username = IdentityFactory.currentUser.username;
     vm.fname = IdentityFactory.currentUser.firstName;
     vm.lname = IdentityFactory.currentUser.lastName;
+    vm.email = IdentityFactory.currentUser.email;
 
     vm.updateProfile = function() {
         var userData = {
             username: vm.username,
+            email: vm.email,
             firstName: vm.fname,
             lastName: vm.lname
         };

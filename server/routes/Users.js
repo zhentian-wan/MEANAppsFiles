@@ -12,7 +12,7 @@ router.route('/')
     .put(users.updateUser);
 
 router.route('/:id')
-    .delete(users.deleteUserById);
+    .delete(auth.requireRole('admin'), users.deleteUserById);
 
 
 module.exports = router;

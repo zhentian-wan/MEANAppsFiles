@@ -12,7 +12,8 @@
     "userAdmin": "用户管理",
     "userProfile": "用户资料",
     "signOut": "切换用户",
-    "adminPage": "管理员界面"
+    "adminPage": "管理员界面",
+    "contact": "联系方式"
   },
   "form": {
     "email": "邮箱: ",

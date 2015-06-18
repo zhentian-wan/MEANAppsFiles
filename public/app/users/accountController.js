@@ -1,6 +1,11 @@
 function AccountController(loginService, ToastFactory, IdentityFactory, $location) {
     var vm = this;
     vm.user = {};
+    vm.isClicked = false;
+
+    vm.showLogin = function() {
+      vm.isClicked = true;
+    };
 
     vm.signin = function(username, password) {
         loginService.login(username, password).then(function(status) {
@@ -18,6 +23,7 @@ function AccountController(loginService, ToastFactory, IdentityFactory, $locatio
             vm.username = null;
             vm.password = null;
             vm.user = null;
+            vm.isClicked = false;
             ToastFactory.success('Successfully logged out!');
             $location.path('/');
         });

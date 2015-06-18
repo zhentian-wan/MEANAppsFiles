@@ -7,6 +7,10 @@
             .col-md-10
                input.form-control(name="username", type="text", placeholder="{{'form.enterUserName' | translate}}" ng-model="profileCtrl.username")
          .form-group
+            label.col-md-2.control-label(for="email") {{'form.email' | translate}}
+            .col-md-10
+               input.form-control(name="email", type="text", placeholder="{{'form.enterEmail' | translate}}" ng-model="profileCtrl.email")
+         .form-group
             label.col-md-2.control-label(for="fname") {{'form.firstName' | translate}}
             .col-md-10
                input.form-control(name="fname", type="text", placeholder="{{'form.enterFirstName' | translate}}" ng-model="profileCtrl.fname")

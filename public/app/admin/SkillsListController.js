@@ -15,4 +15,4 @@ angular.module('app.admin.skills', [
                 }
             }
         })
-    })
+    });

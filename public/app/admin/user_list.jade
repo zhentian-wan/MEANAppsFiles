@@ -14,15 +14,15 @@ h2.sub-header {{'form.registeredUsers' | translate}}
             th {{'form.role' | translate}}
             th {{'form.action' | translate}}
       tbody
-         tr(ng-repeat="user in usersCtrl.users")
-            td.avatar
+         tr.fx-fade-down.fx-easing-strong.fx-speed-400(ng-repeat="user in usersCtrl.users")
+            td.avatar-sm
                gravatar(email="user.email")
-            td.vcenter {{user.username}}
-            td.vcenter {{user.email}}
-            td.vcenter {{user.firstName}}
-            td.vcenter {{user.lastName}}
-            td.vcenter {{user.role[0] || 'common.user' | translate}}
-            td.vcenter
+            td {{user.username}}
+            td {{user.email}}
+            td {{user.firstName}}
+            td {{user.lastName}}
+            td {{user.role[0] || 'common.user' | translate}}
+            td
                button.btn.btn-danger(ng-click="usersCtrl.removeUser(user)") {{'form.delete' | translate}}
 
 

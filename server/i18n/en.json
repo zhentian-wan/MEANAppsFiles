@@ -12,7 +12,8 @@
     "userAdmin": "User admin",
     "userProfile": "User profile",
     "signOut": "Sign out",
-    "adminPage": "Admin Page"
+    "adminPage": "Admin Page",
+    "contact": "Contact"
   },
   "form": {
     "email": "Email address: ",

@@ -1,13 +1,15 @@
-function AppController($rootScope, NOT_AUTHORIZED, $location ) {
+function AppController($rootScope, NOT_AUTHORIZED, $location, $state) {
 
     $rootScope.$on('$routeChangeError', function(event, current, previous, rejction) {
         if(rejction === NOT_AUTHORIZED) {
-            $location.path('/');
+            //$location.path('/');
+            $state.go('app');
         }
     });
 
     $rootScope.$on('$viewContentLoaded', function() {
         var tl = new TimelineLite();
+        var w = $('.jumbotron>.avatar').width();
         tl.fromTo($('.jumbotron>h1'), 0.7, {marginLeft: '500px', alpha: 0}, {
             marginLeft: 0,
             alpha: 1,
@@ -17,6 +19,9 @@ function AppController($rootScope, NOT_AUTHORIZED, $location ) {
                 marginLeft: 0,
                 alpha: 1,
                 ease: Ease.easeInOut
+            })
+            .fromTo($('.jumbotron>.avatar'), 0.7, {alpha: 0}, {
+                alpha: 1
             });
     });
 }
@@ -30,7 +35,6 @@ function localeSelectorDirective() {
 
         vm.setLocale = function() {
             $translate.use(vm.locale);
-            console.log(vm.locale);
         };
     }
 
@@ -44,7 +48,12 @@ function localeSelectorDirective() {
     };
 }
 
-function appConfig($compileProvider, $httpProvider, $stateProvider, $urlRouterProvider, $translateProvider, GravatarProvider) {
+function appConfig($compileProvider,
+                   $httpProvider,
+                   $stateProvider,
+                   $urlRouterProvider,
+                   $translateProvider,
+                   GravatarProvider) {
 
     $httpProvider.useApplyAsync(true);
     $compileProvider.debugInfoEnabled(false);
@@ -52,19 +61,21 @@ function appConfig($compileProvider, $httpProvider, $stateProvider, $urlRouterPr
     $translateProvider.useUrlLoader('/api/lang');
     $translateProvider.preferredLanguage('en');
     //$translateProvider.useSanitizeValueStrategy('sanitize');
-
     $stateProvider.state('app', {
         url: '',
         abstract: true
     });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise(function($injector, $location) {
+        $location.path('/');
+    });
 
-    GravatarProvider.setSize(60);
+    GravatarProvider.setSize(200);
 }
 
 angular.module('app', [
     'ngResource',
+    'ngFx',
     'ngAnimate',
     'formly',
     'formlyBootstrap',
@@ -78,8 +89,8 @@ angular.module('app', [
 ])
     .config(appConfig)
     .value('NOT_AUTHORIZED', 'Not authorized')
+    .value('EMAIL', 'answer881215@gmail.com')
     .controller('AppController', AppController)
-   // .controller('languageController', languageController)
     .directive('localeSelector', localeSelectorDirective)
 ;
 

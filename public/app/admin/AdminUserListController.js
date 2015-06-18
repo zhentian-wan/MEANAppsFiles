@@ -42,7 +42,7 @@ angular.module('app.admin.users', [
                     resolve: userRoleCheck.admin
                 }
             }
-        })
+        });
     })
 
     .controller('usrListController', usrListController);
