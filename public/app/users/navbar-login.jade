@@ -1,5 +1,5 @@
 .navbar-right(ng-controller="AccountController as users")
-   button.btn.btn-info.margin-right-med.margin-top-med(ng-click="users.showLogin()" ng-if="!users.isClicked") {{'header.signIn' | translate}}
+   button.btn.btn-info.margin-right-med.margin-top-med(ng-click="users.showLogin()" ng-if="!users.isAuthed() && !users.isClicked") {{'header.signIn' | translate}}
    form.navbar-form(ng-hide="users.isAuthed() || !users.isClicked")
       .form-group
          input.form-control(placeholder="{{'form.userName' | translate}}" ng-model="users.username")
