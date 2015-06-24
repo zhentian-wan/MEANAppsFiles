@@ -13,9 +13,9 @@
          a.dropdown-toggle(href="" data-toggle="dropdown") {{users.user.firstName + " " + users.user.lastName}}
             b.caret
          ul.dropdown-menu
-            li(ng-show="users.user.isAdmin()")
+            li(ng-show="users.user | admin: 'isAdmin'")
                a(ui-sref="app.admin()") {{'header.adminPage' | translate}}
-            li.divider(ng-show="users.user.isAdmin()")
+            li.divider(ng-show="users.user | admin: 'isAdmin'")
             li
                a(ui-sref="app.profile()") {{'header.userProfile' | translate}}
             li.divider
