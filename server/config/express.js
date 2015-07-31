@@ -3,7 +3,6 @@
  */
 var express = require('express'),
     stylus = require('stylus'),
-    nib = require('nib'),
     logger = require('morgan'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
@@ -15,9 +14,7 @@ module.exports = function(app, config) {
     function compile(str, path) {
         return stylus(str)
             .set('filename', path)
-            .set('compress', true)
-            .use(nib())
-            .import('nib');
+            .set('compress', true);
     }
 
     // Set view page path
