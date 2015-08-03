@@ -2,7 +2,6 @@ function AppController($rootScope, NOT_AUTHORIZED, $location, $state) {
 
     $rootScope.$on('$routeChangeError', function(event, current, previous, rejction) {
         if(rejction === NOT_AUTHORIZED) {
-            //$location.path('/');
             $state.go('app');
         }
     });

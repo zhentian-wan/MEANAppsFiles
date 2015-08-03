@@ -1,0 +1,1 @@
+angular.module("app.models.user-models",[]).factory("UserResource",["$resource",function(e){var r=e("/api/users/:id",{_id:"@id"},{update:{method:"PUT",isArray:!1}});return r.prototype.isAdmin=function(){return this.role&&this.role.indexOf("admin")>-1},r}]);

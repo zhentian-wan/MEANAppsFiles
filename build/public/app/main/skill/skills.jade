@@ -1,0 +1,23 @@
+//
+   Created by Answer1215 on 6/12/2015.
+
+section(id="skill_section")
+   .container
+      .row.text-center
+         .col-md-12
+            h1.section_h1 {{'header.skills' | translate}}
+         .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.section_p
+            p {{'body.skills.skillDesc' | translate}}
+      .row
+         .col-md-12
+            category-nav
+      .row
+         .col-md-4.col-sm-4.col-xs-12
+            div
+               include master-skills
+         .col-md-4.col-sm-4.col-xs-12
+            div
+               include knowing-skills
+         .col-md-4.col-sm-4.col-xs-12
+            div
+               include learning-skills

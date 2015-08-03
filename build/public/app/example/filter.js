@@ -1,0 +1,1 @@
+angular.module("filter",[]).filter("titleCase",function(){return function(e){return e?e.replace(/\w\S*/g,function(e){return e.charAt(0).toUpperCase()+e.substr(1).toLowerCase()}):e}});

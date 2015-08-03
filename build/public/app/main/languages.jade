@@ -1,0 +1,3 @@
+select.pull-right(ng-change="langCtrl.setLocale()" ng-model="langCtrl.locale")
+    option(value="en" ng-selected="langCtrl.locale == 'en'" ) {{'languageNames.en' | translate}}
+    option(value="ch" ng-selected="langCtrl.locale == 'ch'") {{ 'languageNames.ch' | translate }}

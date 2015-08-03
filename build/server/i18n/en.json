@@ -1,0 +1,70 @@
+{
+  "languageNames": {
+    "en": "English",
+    "ch": "Chinese"
+  },
+  "header": {
+    "zhentianHome": "Zhentian's Home",
+    "skillsStack": "Skills Stack",
+    "skills": "Skills",
+    "signIn": "Sign in",
+    "signUp": "Sign up",
+    "userAdmin": "User admin",
+    "userProfile": "User profile",
+    "signOut": "Sign out",
+    "adminPage": "Admin Page",
+    "contact": "Contact"
+  },
+  "form": {
+    "email": "Email address: ",
+    "enterEmail": "Email address: ",
+    "repeatPassword": "Repeat password",
+    "enterRepeatPassword": "Please Repeat password",
+    "firstName": "First name",
+    "enterFirstName": "Enter your First name",
+    "lastName": "Last name",
+    "enterLastName": "Enter your last name",
+    "userName": "Username",
+    "enterUserName": "Enter username",
+    "password": "Password",
+    "enterPassword": "Enter password",
+    "title": "Title",
+    "sinceDate": "Since Date",
+    "sortByName": "Sort by Name",
+    "sortBySinceDate": "Sort by since date",
+    "delete": "Delete",
+    "update": "Update",
+    "cancel": "Cancel",
+    "newUserInfo":"New User Information",
+    "saving":"Saving...",
+    "role": "Role",
+    "registeredUsers": "Registered Users",
+    "action": "Action",
+    "picture": "Picture"
+  },
+  "body": {
+    "main": {
+      "webDeveloper": "Me as a web developer",
+      "AAA": "Your attitude, not your aptitude, will determine your altitude"
+    },
+    "skills": {
+      "masterSkills": "Master skills",
+      "knowingSkills": "Knowing skills",
+      "learningSkills": "Learning skills",
+      "skillDetail": "Skill Detail",
+      "skillDesc": "I have a solid background on Javascript related techs, such as AngularJS, NodeJS, ExpressJS. Also I have exploded many Javascript libraries such as RxJS & lodash. And I am continuing learning and improving my skills :)"
+    },
+    "skillCategory": "Skills Category",
+    "experience": "Experiences",
+    "experienceDesc": "Have been working on MEAN (Angular, Node, Express & MongoDB) applications since 09/2014 in a company, 4+ year experience with PHP & Javascript experience for real web application. Nowadays, put more effort on large web application. "
+  },
+  "info": {
+    "loginSuccess": "Successfully logged in!",
+    "loginFail": "Cannot login!",
+    "logoutSuccess": "Successfully logout!",
+    "selectLanguage": "Select languages: "
+  },
+  "common": {
+    "user": "User"
+  }
+}

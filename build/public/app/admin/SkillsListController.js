@@ -1,0 +1,1 @@
+angular.module("app.admin.skills",[]).config(["$stateProvider",function(a){a.state("app.admin.skills",{url:"/skills",views:{"admin@app.admin":{templateUrl:"/partials/admin/skill_list"}}})}]);

@@ -1,0 +1,23 @@
+.navbar-right(ng-controller="AccountController as users")
+   button.btn.btn-info.margin-right-med.margin-top-med(ng-click="users.showLogin()" ng-if="!users.isAuthed() && !users.isClicked") {{'header.signIn' | translate}}
+   form.navbar-form(ng-hide="users.isAuthed() || !users.isClicked")
+      .form-group
+         input.form-control(placeholder="{{'form.userName' | translate}}" ng-model="users.username")
+      .form-group
+         input.form-control(type="password" placeholder="{{'form.password' | translate}}" ng-model="users.password")
+      button.btn.btn-primary(ng-click="users.signin(users.username, users.password)") {{'header.signIn' | translate}}
+      | &nbsp;
+      a.btn.btn-info(ui-sref="app.signup()") {{'header.signUp' | translate}}
+   ul.nav.navbar-nav.navbar-right(ng-show="users.isAuthed()")
+      li.dropdown
+         a.dropdown-toggle(href="" data-toggle="dropdown") {{users.user.firstName + " " + users.user.lastName}}
+            b.caret
+         ul.dropdown-menu
+            li(ng-show="users.user | admin: 'isAdmin'")
+               a(ui-sref="app.admin()") {{'header.adminPage' | translate}}
+            li.divider(ng-show="users.user | admin: 'isAdmin'")
+            li
+               a(ui-sref="app.profile()") {{'header.userProfile' | translate}}
+            li.divider
+            li
+               a(href="" ng-click="users.signout()") {{'header.signOut' | translate}}

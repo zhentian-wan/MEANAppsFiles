@@ -1,0 +1,16 @@
+h2.sub-header Registered Users
+.table-responsive
+    table.table.table-striped
+        thead
+            tr
+                th {{'form.userName' | translate}}
+                th {{'form.firstName' | translate}}
+                th {{'form.lastName' | translate}}
+                th {{'form.role' | translate}}
+        tbody
+            tr(ng-repeat="user in users")
+                td user.username
+                td user.firstName
+                td user.lastName
+                td user.role
+

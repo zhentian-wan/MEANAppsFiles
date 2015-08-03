@@ -1,0 +1,14 @@
+.container-fuild(ng-controller="MainController as main")
+    .jumbotron
+        h1.text-justify {{'body.main.webDeveloper' | translate}}
+        blockquote.text-justify {{'body.main.AAA' | translate}}
+        gravatar.avatar(email="main.email")
+
+    include ./skill/skills
+    include ./experience/experience
+    include ./contact/contact
+
+footer.container-fluid.text-center
+    p &copy; 2015 Zhentian Wan
+
+
