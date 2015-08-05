@@ -14,9 +14,7 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     reload = browserSync.reload,
     jshint = require('gulp-jshint'),
-    minifyCss = require('gulp-minify-css'),
-    rename = require('gulp-rename'),
-    concatCss = require('gulp-concat-css');
+    minifyCss = require('gulp-minify-css');
 
 //Default task
 gulp.task('default', function(callback) {
@@ -122,6 +120,7 @@ gulp.task('vendor', function() {
 
 gulp.task('image', function() {
     return gulp.src('./public/images/*')
+        .pipe(plumber())
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
