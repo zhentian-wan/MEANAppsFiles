@@ -11,6 +11,7 @@ function appAdminConfig($stateProvider) {
     var userRoleCheck = {
         admin: {
             auth: function(loginService) {
+                console.log(loginService);
                 return loginService.authorizeCurrentUserForRoute('admin');
             }
         }
