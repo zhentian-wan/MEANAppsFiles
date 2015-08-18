@@ -1,0 +1,19 @@
+doctype
+html(ng-app="app" ng-controller="AppController as appCtrl")
+    head
+        title {{'header.zhentianHome' | translate}}
+        base(href="/")
+        meta(charset="UTF-8")
+        link(href="/favicon.ico", rel="shortcut icon", type="image/x-icon")
+        link(href="/css/bootstrap.css", rel="stylesheet")
+        link(href="/vendor/toastr/toastr.min.css" rel='stylesheet')
+        link(href="/css/site.css", rel="stylesheet")
+        link(href="/css/animate.css", rel="stylesheet")
+        link(href="/css/experience.css", rel="stylesheet")
+        link(href="/css/admin.css", rel="stylesheet")
+
+    body
+        include currentUser
+        block main-content
+        //include all the javascript files
+        include scripts

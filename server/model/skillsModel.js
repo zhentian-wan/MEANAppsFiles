@@ -2,7 +2,8 @@
  * Created by Answer1215 on 5/18/2015.
  */
 var mongoose = require('mongoose'),
-    _ = require('lodash');
+    _ = require('lodash'),
+    Promise = require('bluebird');
 
 var skillSchema = mongoose.Schema({
     title: {type: String, required: '{PATH} is required!', unique: true},
@@ -13,7 +14,8 @@ var skillSchema = mongoose.Schema({
     tags: [String]
 });
 
-var Skill = mongoose.model('Skill', skillSchema);
+var SkillModel = mongoose.model('Skill', skillSchema);
+
 
 function getTagCategories() {
     var e = "Elementary",
@@ -41,9 +43,9 @@ function createDefaultSkills() {
 
     var c = getTagCategories();
 
-    Skill.find({}).exec(function(err, collection) {
+    SkillModel.find({}).exec(function(err, collection) {
         if(_.size(collection) == 0) {
-            Skill.create({
+            SkillModel.create({
                 tags: [c.e],
                 title: 'C#',
                 mastered: false,
@@ -51,7 +53,7 @@ function createDefaultSkills() {
                 learning: false,
                 published: new Date('2011', '09', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [c.e],
                 title: 'Java',
                 mastered: false,
@@ -59,7 +61,7 @@ function createDefaultSkills() {
                 learning: false,
                 published: new Date('2010', '03', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [c.w, c.e],
                 title: 'Javascript',
                 mastered: true,
@@ -67,7 +69,7 @@ function createDefaultSkills() {
                 learning: false,
                 published: new Date('2011', '11', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [c.w, c.l],
                 title: 'jQuery',
                 mastered: true,
@@ -75,7 +77,7 @@ function createDefaultSkills() {
                 learning: false,
                 published: new Date('2011', '11', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [c.s, c.w],
                 title: 'Node.js',
                 mastered: true,
@@ -83,7 +85,7 @@ function createDefaultSkills() {
                 learning: false,
                 published: new Date('2014', '05', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [c.w, c.f],
                 title: 'AngularJS',
                 mastered: true,
@@ -91,7 +93,7 @@ function createDefaultSkills() {
                 learning: false,
                 published: new Date('2014', '07', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [c.w, c.s, c.f],
                 title: 'Express.js',
                 mastered: true,
@@ -99,7 +101,7 @@ function createDefaultSkills() {
                 learning: false,
                 published: new Date('2014', '07', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [c.d],
                 title: 'MongoDB',
                 mastered: true,
@@ -107,7 +109,7 @@ function createDefaultSkills() {
                 learning: false,
                 published: new Date('2014', '09', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [c.w, c.t],
                 title: 'Karma Jasmine',
                 mastered: true,
@@ -115,7 +117,7 @@ function createDefaultSkills() {
                 learning: false,
                 published: new Date('2014', '09', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [c.f, c.w, c.s],
                 title: 'Ruby on Rails',
                 mastered: false,
@@ -123,7 +125,7 @@ function createDefaultSkills() {
                 learning: false,
                 published: new Date('2014', '12', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [c.s, c.w],
                 title: 'PHP',
                 mastered: true,
@@ -131,14 +133,15 @@ function createDefaultSkills() {
                 learning: false,
                 published: new Date('2011', '09', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [c.s, c.w, c.f],
                 title: 'CakePHP',
                 mastered: false,
                 know: true,
                 learning: false,
                 published: new Date('2011', '09', '01')
-            });Skill.create({
+            });
+            SkillModel.create({
                 tags: [c.s, c.w, c.f],
                 title: 'Zend Framework',
                 mastered: false,
@@ -146,7 +149,7 @@ function createDefaultSkills() {
                 learning: false,
                 published: new Date('2011', '09', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [c.m],
                 title: 'Android',
                 mastered: false,
@@ -154,7 +157,7 @@ function createDefaultSkills() {
                 learning: false,
                 published: new Date('2014', '06', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [c.d],
                 title: 'Firebase',
                 mastered: false,
@@ -162,7 +165,7 @@ function createDefaultSkills() {
                 learning: false,
                 published: new Date('2014', '10', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [w, f],
                 title: 'React',
                 mastered: false,
@@ -170,7 +173,7 @@ function createDefaultSkills() {
                 learning: true,
                 published: new Date('2015', '01', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [c.w, c.l],
                 title: 'RxJS',
                 mastered: false,
@@ -178,7 +181,7 @@ function createDefaultSkills() {
                 learning: true,
                 published: new Date('2015', '05', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [c.w, c.l],
                 title: 'lodash',
                 mastered: false,
@@ -186,7 +189,7 @@ function createDefaultSkills() {
                 learning: true,
                 published: new Date('2015', '05', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [c.w, c.l],
                 title: 'D3.js',
                 mastered: false,
@@ -194,7 +197,7 @@ function createDefaultSkills() {
                 learning: true,
                 published: new Date('2015', '06', '01')
             });
-            Skill.create({
+            SkillModel.create({
                 tags: [c.d],
                 title: 'MySQL',
                 mastered: true,
@@ -206,5 +209,62 @@ function createDefaultSkills() {
     });
 }
 
+function getSkills() {
+    return new Promise(function(resolve, reject) {
+        SkillModel.find({}).exec(function(err, collection) {
+            if(err) {
+                reject(err);
+            } else {
+                resolve(collection);
+            }
+        });
+    });
+}
+
+function getSkillById(skillId) {
+    return new Promise(function(resolve, reject) {
+        SkillModel.findOne({_id: skillId}).exec(function(err, skill) {
+            if(err) {
+                reject(err);
+            } else {
+                resolve(skill);
+            }
+        })
+    })
+}
+
+function addNewSkill(skillData) {
+    return new Promise(function(resolve, reject) {
+        SkillModel.create(skillData, function(err, skill) {
+            if(err) {
+                if(err.toString().indexOf('E11000') > -1) {
+                    err = new Error('Duplicate name');
+                }
+                reject(err);
+            } else {
+                resolve(skill);
+            }
+        });
+    });
+}
+
+
+function deleteSkillById(skillId) {
+
+    return new Promise(function(resolve, reject) {
+        Skill.findOne({_id: skillId}).remove().exec(function(err) {
+            if(err) {
+                reject(err);
+            }else{
+                resolve();
+            }
+        });
+    })
+}
+
 exports.createDefaultSkills = createDefaultSkills;
 exports.getTagCategories = getTagCategories;
+exports.getSkills = getSkills;
+exports.getSkillById = getSkillById;
+exports.addNewSkill = addNewSkill;
+exports.deleteSkillById = deleteSkillById;

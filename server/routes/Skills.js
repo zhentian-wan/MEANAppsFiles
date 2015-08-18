@@ -7,7 +7,7 @@ var express = require('express'),
 
 router.route('/')
     .get(skills.getSkills)
-    .post(skills.createSkill);
+    .post(skills.addNewSkill);
 
 router.route('/:id')
     .all(function(req, res, next) {

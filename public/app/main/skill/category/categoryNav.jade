@@ -7,5 +7,6 @@
    .panel-body
       .category-nav.vcenter
          h3(ng-repeat="(key, value) in categoryCtrl.tags")
-            span.label.label-info(href="" ng-click="categoryCtrl.toggleCategory(key)" ng-class="{'label-warning': categoryCtrl.isActive(key)}") {{key}}
+            span.label.label-info(href="" ng-click="categoryCtrl.toggleCategory(key)" ng-class="{'label-warning': categoryCtrl.isActive(key)}")
                span.badge.pull-right {{value}}
+               span {{key}}
