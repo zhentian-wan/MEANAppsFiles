@@ -6,8 +6,8 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),                   // util tools
     stylus = require('gulp-stylus'),                // compile stylus to css
     sourcemaps = require('gulp-sourcemaps'),        // sourcemaps for stylus
-   // imagemin = require('gulp-imagemin'),            // compress images
-   // pngquant = require('imagemin-pngquant'),
+    imagemin = require('gulp-imagemin'),            // compress images
+    pngquant = require('imagemin-pngquant'),
     plumber = require('gulp-plumber'),              // keep gulp watching without stopping when error happen
     autoprefixer = require('gulp-autoprefixer'),    // auto add web prefix for you
     ngAnnotate = require('gulp-ng-annotate'),
@@ -49,7 +49,7 @@ gulp.task('jade-public', function() {
 gulp.task('jade-server', function() {
     return gulp.src(gConfig.server_file.jade_src)
         .pipe(plumber())
-        .pipe(gulp.dest(gConfig.build.build_public));
+        .pipe(gulp.dest(gConfig.build.build_server));
 });
 /* jade task end*/
 
@@ -72,7 +72,7 @@ gulp.task('js-public', function() {
 });
 
 gulp.task('js-server', function() {
-    return gulp.src(gConfig.server_file.jade_src)
+    return gulp.src(gConfig.server_file.js_src)
         .pipe(gulp.dest(gConfig.build.build_server));
 });
 /* js task end*/
@@ -120,16 +120,16 @@ gulp.task('vendor', function() {
         .pipe(gulp.dest(gConfig.build.build_vendor));
 });
 
-//gulp.task('image', function() {
-//    return gulp.src('./public/images/*')
-//        .pipe(plumber())
-//        .pipe(imagemin({
-//            progressive: true,
-//            svgoPlugins: [{removeViewBox: false}],
-//            use: [pngquant()]
-//        }))
-//        .pipe(gulp.dest('./build/public/images'));
-//});
+gulp.task('image', function() {
+    return gulp.src(gConfig.app_file.images)
+        .pipe(plumber())
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest(gConfig.build.build_images));
+});
 
 gulp.task('browser-sync', function() {
     browserSync({

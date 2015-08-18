@@ -7,7 +7,8 @@ module.exports = {
         js_src: './public/app/**/*.js',
         css_src: './public/css/*.css',
         styl_src: './public/css/*.styl',
-        vendor_src: './public/vendor/**/*.js'
+        vendor_src: './public/vendor/**/*.js',
+        images: './public/images/*'
     },
     server_file: {
         entry: './server.js',
@@ -22,6 +23,7 @@ module.exports = {
         build_server: './build/server',
         build_i18n:'./build/server/i18n',
         build_css: './build/public/css',
-        build_vendor: './build/public/vendor'
+        build_vendor: './build/public/vendor',
+        build_images: 'build/public/images'
     }
 };
