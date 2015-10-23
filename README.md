@@ -4,6 +4,7 @@ MEANAppsFiles
 ![node](https://img.shields.io/node/v/gh-badges.svg)
 ![Bower](https://img.shields.io/bower/v/bootstrap.svg)
 ![travis build](https://img.shields.io/travis/zhentian-wan/MEANAppsFiles.svg)
+![MIT](https://img.shields.io/npm/l/express.svg)
 
 
 # [Demo](https://zhentian.herokuapp.com/#/)
