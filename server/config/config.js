@@ -12,7 +12,7 @@ module.exports = {
     },
     production: {
         rootPath: rootPath,
-        db: 'mongodb://zhentain:881215@ds019472.mlab.com:19472/heroku_bwfngp4m',
+        db: 'mongodb://zhentain:881215@ds019472.mlab.com:19472/multivision',
         port: process.env.PORT || 80
     }
 };
